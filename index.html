@@ -1,14 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>是益挞子哦</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>是益挞子哦</title>
+    <style>
+        /* 为 Live2D 插件设置样式 */
+        #live2d-widget {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 保留现有内容 -->
     <img src="GIF 2022-12-4 18-21-05.gif"/>
     <h1>静夜思</h1>
     <p>床前明月光</p>
     <p>疑是地上霜</p>
     <p>举头望明月</p>
     <p>低头思故乡</p>    
-    </body>
+
+    <!-- 添加 Live2D 插件 -->
+    <div id="live2d-widget"></div>
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+</body>
 </html>
