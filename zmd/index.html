@@ -28,12 +28,27 @@
   nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 18px}
   nav a{font-size:14px;color:var(--ink2);padding:7px 13px;border-radius:999px;white-space:nowrap;transition:.15s}
   nav a:hover{background:#eef0fb;color:var(--brand)}
+  /* TOOLBAR */
+  .toolbar{position:sticky;top:52px;z-index:49;background:#1f2533;color:#fff;
+    display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:9px 18px;box-shadow:var(--shadow)}
+  .toolbar .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center;width:100%}
+  .tbtn{font-size:13px;padding:7px 13px;border-radius:10px;border:none;cursor:pointer;
+    background:#2c3346;color:#fff;font-weight:600;transition:.15s}
+  .tbtn:hover{background:#3a425a}
+  .tbtn.on{background:var(--brand)}
+  .tbtn.primary{background:var(--good)}
+  .tbtn.warn{background:var(--wait);color:#5b4bcf}
+  .toolbar .sp{flex:1}
+  /* OVERRIDE BANNER */
+  .obanner{background:#fff8e1;color:#8a6d00;border:1px solid #ffe08a;font-size:13px;
+    padding:9px 18px;text-align:center}
+  .obanner b{color:#b8860b}
   /* SECTION */
   section{padding:34px 0 6px}
-  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
   .sec-head h2{font-size:21px;font-weight:800}
   .sec-head .tag{font-size:12px;color:var(--ink2);background:#eef0fb;padding:3px 10px;border-radius:999px}
-  .sec-sub{color:var(--ink2);font-size:14px;margin:-6px 0 18px;max-width:760px}
+  .sec-sub{color:var(--ink2);font-size:14px;margin:-6px 0 18px;max-width:780px}
   /* KPI CARDS */
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px}
   .kpi{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
@@ -70,10 +85,10 @@
   .lc .qty{font-size:12.5px;color:var(--ink2);display:flex;gap:14px;flex-wrap:wrap}
   .lc .qty b{color:var(--ink);font-size:14px}
   /* TABLE */
-  .tbl{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .tbl{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:auto}
   .tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
-  .tbl th,.tbl td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
-  .tbl th{background:#fafbff;font-weight:700;color:var(--ink2);font-size:12.5px;position:sticky;top:54px}
+  .tbl th,.tbl td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  .tbl th{background:#fafbff;font-weight:700;color:var(--ink2);font-size:12.5px;position:sticky;top:104px}
   .tbl tr:last-child td{border-bottom:none}
   .judge{font-weight:700;padding:3px 10px;border-radius:999px;font-size:12.5px;display:inline-block}
   .j-bad{background:#fdeaf2;color:#c2185b}.j-good{background:#e3fbf3;color:#06966f}.j-wait{background:#fff8e1;color:#b8860b}
@@ -82,6 +97,17 @@
   .bar .o{background:linear-gradient(90deg,#00b894,#26d3a8)}
   .bar .i{background:linear-gradient(90deg,#e17055,#ff9b7a)}
   .muted{color:#aab;font-size:12px}
+  /* EDIT INPUTS */
+  input.e,select.e{font-family:inherit;font-size:13px;padding:5px 7px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink);width:100%;max-width:170px}
+  input.e.num{max-width:80px;text-align:right}
+  td .e,th .e{max-width:none}
+  .rowact{display:flex;gap:6px;margin-top:10px}
+  .mini{font-size:12px;padding:5px 10px;border-radius:8px;border:1px solid var(--line);background:#fff;
+    cursor:pointer;color:var(--ink2)}
+  .mini:hover{border-color:var(--bad);color:var(--bad)}
+  .mini.add{color:var(--good);border-color:#bfe9da}
+  .mini.add:hover{background:#e3fbf3}
   /* KANBAN */
   .kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
   .col{background:#f8f9fe;border-radius:var(--radius);padding:12px;border:1px solid var(--line)}
@@ -89,7 +115,7 @@
   .col.p0 h3{background:#fdeaf2;color:#c2185b}.col.p1 h3{background:#fff0e6;color:#d35400}.col.p2 h3{background:#eaf1ff;color:#2d6cdf}
   .bc{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 2px 8px rgba(31,37,51,.05);border-left:4px solid #ccc}
   .bc.p0{border-left-color:#c2185b}.bc.p1{border-left-color:#d35400}.bc.p2{border-left-color:#2d6cdf}
-  .bc .t{font-weight:700;font-size:14px;display:flex;justify-content:space-between;gap:8px}
+  .bc .t{font-weight:700;font-size:14px;display:flex;justify-content:space-between;gap:8px;align-items:center}
   .bc .sev{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:700}
   .sev.高{background:#fdeaf2;color:#c2185b}.sev.中{background:#fff0e6;color:#d35400}.sev.低{background:#eaf1ff;color:#2d6cdf}
   .bc .row{font-size:12.5px;color:var(--ink2);margin-top:7px}
@@ -97,7 +123,7 @@
   .bc .fix{font-size:12.5px;margin-top:8px;background:#f3f6ff;padding:8px 10px;border-radius:8px;color:#374}
   .bc .fix b{color:var(--brand)}
   .empty{font-size:13px;color:#aab;text-align:center;padding:18px}
-  /* HINT BOX */
+  /* HINT */
   .hint{background:#fff;border:1px dashed #cfd6e6;border-radius:12px;padding:13px 15px;font-size:13px;
     color:var(--ink2);margin-top:14px}
   .hint b{color:var(--ink)}
@@ -112,7 +138,8 @@
   .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin:4px 0 14px}
   .legend span{display:inline-flex;align-items:center;gap:5px}
   .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-  @media(max-width:560px){.hero h1{font-size:24px}.sec-head h2{font-size:18px}}
+  @media(max-width:560px){.hero h1{font-size:24px}.sec-head h2{font-size:18px}.toolbar{top:50px}}
+  .hidden{display:none}
 </style>
 </head>
 <body>
@@ -122,7 +149,7 @@
   <div class="meta">
     <span>📅 更新：<b id="hDate">—</b></span>
     <span>📊 数据源：<b id="hSrc">—</b></span>
-    <span>🔗 配套台账：五表 Excel（产线/物料/公辅/瓶颈/KPI）</span>
+    <span>🔗 配套台账：五表 Excel（可网页内直接编辑）</span>
   </div>
 </div></div>
 
@@ -136,28 +163,39 @@
   <a href="#upm">UPM 科普</a>
 </div></nav>
 
+<div class="toolbar"><div class="wrap">
+  <button class="tbtn" id="btnEdit">✏️ 编辑模式</button>
+  <button class="tbtn primary hidden" id="btnAddLine">＋ 新增产线</button>
+  <span class="sp"></span>
+  <button class="tbtn" id="btnExport">⬇️ 导出 data.js</button>
+  <button class="tbtn" id="btnImport">⬆️ 导入</button>
+  <button class="tbtn warn hidden" id="btnReset">↺ 恢复原始台账</button>
+  <input type="file" id="fileInput" accept=".js,.json" class="hidden">
+</div></div>
+
+<div class="obanner hidden" id="obanner">⚠️ 你正在查看<b>浏览器里修改过的版本</b>（已自动保存在本机），公开站点 <a href="https://edawebs.github.io/zmd/" target="_blank" rel="noopener">edawebs.github.io/zmd/</a> 尚未同步。点「导出 data.js」可更新公开站点。</div>
+
 <div class="wrap">
 
-  <!-- OVERVIEW -->
   <section id="overview">
     <div class="sec-head"><h2>📌 总览</h2><span class="tag">一眼看懂全局</span></div>
     <div class="kpis" id="kpis"></div>
-    <div class="hint">看板数据来自你的 Excel 五表台账。颜色含义：<b style="color:#06966f">绿=正常/自平衡</b>、
+    <div class="hint">看板数据可直接在网页里改（点右上角「✏️ 编辑模式」）。颜色含义：<b style="color:#06966f">绿=正常/自平衡</b>、
       <b style="color:#d35400">橙=需关注/半效率</b>、<b style="color:#c2185b">红=缺口/缺料</b>、
       <b style="color:#b8860b">黄=待实测</b>。当前"缺料预警=0"是因为投入消耗大多还没测，属正常状态。</div>
   </section>
 
-  <!-- LINES -->
   <section id="lines">
-    <div class="sec-head"><h2>🏭 产线总览</h2><span class="tag" id="linesTag">26 条产线</span></div>
-    <p class="sec-sub">每张卡片 = 一条产线。点下方区域标签可筛选；颜色条代表所属区域。</p>
+    <div class="sec-head"><h2>🏭 产线总览</h2><span class="tag" id="linesTag">26 条产线</span>
+      <button class="mini add hidden" id="btnAddLine2">＋ 新增产线</button></div>
+    <p class="sec-sub">每张卡片 = 一条产线。点下方区域标签可筛选；颜色条代表所属区域。编辑模式下可改字段、加线、删线。</p>
     <div class="filters" id="filters"></div>
     <div class="grid" id="lineGrid"></div>
   </section>
 
-  <!-- BOM -->
   <section id="bom">
-    <div class="sec-head"><h2>⚖️ 物料平衡</h2><span class="tag">投入 vs 产出</span></div>
+    <div class="sec-head"><h2>⚖️ 物料平衡</h2><span class="tag">投入 vs 产出</span>
+      <button class="mini add hidden" id="btnAddBom">＋ 新增物料</button></div>
     <p class="sec-sub">每种物料"产了多少、吃掉多少、净剩多少"。条形里 <b style="color:#00b894">绿=产出</b>、
       <b style="color:#e17055">橙=投入</b>。判定为<span class="judge j-bad">缺料</span>时说明不够用，要补产线。</p>
     <div class="legend">
@@ -166,192 +204,308 @@
       <span><i class="dot" style="background:#fdcb6e"></i>待实测（消耗未记）</span>
     </div>
     <div class="tbl"><table>
-      <thead><tr><th>物料</th><th>投入 /分钟</th><th>产出 /分钟</th><th>净产出</th><th>投入·产出比</th><th>判定</th></tr></thead>
+      <thead><tr><th>物料</th><th>投入 /分钟</th><th>产出 /分钟</th><th>净产出</th><th>投入·产出比</th><th>判定</th><th class="hidden edcol">操作</th></tr></thead>
       <tbody id="bomBody"></tbody>
     </table></div>
-    <div class="hint">当前 43 种物料标"<b>待实测</b>"——因为投入消耗还是 0（没测过）。等你把每条线实际吃掉多少料填进 Excel 的「物料平衡BOM」，
-      这里会自动算出真实缺口，<span class="judge j-bad">缺料</span>就会亮起来。</div>
+    <div class="hint">编辑模式下直接改「投入/产出」数字，<b>净产出和判定会自动重算</b>。当前多数物料标"<b>待实测</b>"——因为投入消耗还是 0（没测过）。把每条线实际吃掉多少料填上，<span class="judge j-bad">缺料</span>就会亮起来。</div>
   </section>
 
-  <!-- UTIL -->
   <section id="util">
     <div class="sec-head"><h2>🔌 公辅负载</h2><span class="tag">水·电·气·地形</span></div>
     <p class="sec-sub">真实工厂里产线跑不满，八成是水电不够。这里记公辅约束，是瓶颈排查第一站。</p>
     <div class="kpis" id="utilKpis"></div>
     <div class="tbl" style="margin-top:14px"><table>
-      <thead><tr><th>产线</th><th>已知电力(W)</th><th>需满速水管</th><th>惰气环境</th><th>备注</th></tr></thead>
+      <thead><tr><th>产线</th><th>已知电力(W)</th><th>水泵数(台)</th><th>需满速水管</th><th>惰气环境</th><th>备注</th><th class="hidden edcol">操作</th></tr></thead>
       <tbody id="utilBody"></tbody>
     </table></div>
-    <div class="hint">⚠️ 公辅表原数据列有错位，本看板只取可靠信号：<b>高地发电机组 4600W</b> 为唯一已记电力；
-      已知水泵数——武陵城息壤线 2 台、首墩息壤气线 0.5 台（半泵低效率）、应龙关 0.33 台（三分之一泵高效率）。
-      其余产线水电数据<b>待实测</b>。</div>
+    <div class="hint">公辅表原数据列有错位，本看板只取可靠信号：<b>高地发电机组 4600W</b> 为唯一已记电力。编辑模式下可补各线电力/水泵/水管/惰气。</div>
   </section>
 
-  <!-- BOTTLENECK -->
   <section id="bottleneck">
-    <div class="sec-head"><h2>🛠 瓶颈看板</h2><span class="tag">问题跟踪</span></div>
+    <div class="sec-head"><h2>🛠 瓶颈看板</h2><span class="tag">问题跟踪</span>
+      <button class="mini add hidden" id="btnAddBn">＋ 新增瓶颈</button></div>
     <p class="sec-sub">像工厂的"异常处理单"。按优先级分三列，<b>改进方案</b>是重点——发现问题必须想到办法。</p>
     <div class="kanban" id="kanban"></div>
   </section>
 
-  <!-- KPI -->
   <section id="kpi">
     <div class="sec-head"><h2>📈 日收支 / 毕业目标</h2><span class="tag">对照基准</span></div>
-    <p class="sec-sub">右侧是 NGA 攻略的"毕业速率"基准，作为你的目标线。每天在 Excel「日收支KPI」填一行，这里就能看趋势。</p>
+    <p class="sec-sub">右侧是 NGA 攻略的"毕业速率"基准，作为你的目标线。每天在「日收支KPI」填一行，这里就能看趋势。</p>
     <div class="tbl"><table>
       <thead><tr><th>指标</th><th>毕业目标 /分钟</th><th>目标进度条</th></tr></thead>
       <tbody id="kpiBody"></tbody>
     </table></div>
-    <div class="hint">当前<b>暂无每日填报数据</b>。建议每天固定时间（如睡前）看一眼游戏产出面板，把息壤/电池/芽针等数字抄进 Excel，
-      连续填一周后，哪些天哪条线掉过一目了然。</div>
+    <div class="hint">当前<b>暂无每日填报数据</b>。建议每天固定时间看一眼游戏产出面板，把息壤/电池/芽针等数字抄进台账，连续填一周后哪些天掉过一目了然。</div>
   </section>
 
-  <!-- UPM -->
   <section id="upm">
     <div class="sec-head"><h2>🧮 UPM 是什么</h2><span class="tag">小白必读</span></div>
-    <p class="sec-sub">UPM = 每分钟产出（Units Per Minute）。你把游戏里"每几秒出 1 个"换算成"每分钟出几个"，才能把 26 条线加总比较。</p>
+    <p class="sec-sub">UPM = 每分钟产出（Units Per Minute）。把游戏里"每几秒出 1 个"换算成"每分钟出几个"，才能把 26 条线加总比较。</p>
     <div class="upm" id="upmBox"></div>
-    <div class="hint">换算公式：<b>60 ÷ 秒数 = 每分钟个数</b>。例：2 秒 1 个 → 60÷2 = <b>30 个/分钟</b>。
-      你原表里那些"2秒1个""20秒1个"都已按此换算进台账的「理论产量」列。</div>
+    <div class="hint">换算公式：<b>60 ÷ 秒数 = 每分钟个数</b>。例：2 秒 1 个 → 60÷2 = <b>30 个/分钟</b>。</div>
   </section>
 
 </div>
 
 <footer>
-  本看板由 Excel 台账自动生成 · 数据源 <span id="fSrc">zmd工业小计.xlsx</span> · 部署于
+  本看板支持网页内直接编辑 · 数据源 <span id="fSrc">zmd工业小计.xlsx</span> · 部署于
   <a href="https://edawebs.github.io/" target="_blank" rel="noopener">edawebs.github.io</a>
 </footer>
 
 <script src="data.js"></script>
 <script>
-const D = window.ZMD_DATA;
-const RC = D.regionColors || {};
-const $ = s => document.querySelector(s);
+const STORE_KEY='zmd_state_v1';
+const RC0=(window.ZMD_DATA&&window.ZMD_DATA.regionColors)||{};
+const BASE=JSON.parse(JSON.stringify(window.ZMD_DATA));
+let state=loadState();
+let editMode=false;
 
-// hero
-$('#hTitle').textContent = D.meta.title;
-$('#hSub').textContent = D.meta.subtitle;
-$('#hDate').textContent = D.meta.updated;
-$('#hSrc').textContent = D.meta.source;
-$('#fSrc').textContent = D.meta.source;
+function loadState(){ try{const r=localStorage.getItem(STORE_KEY); if(r)return JSON.parse(r);}catch(e){} return JSON.parse(JSON.stringify(BASE)); }
+function saveState(){ try{localStorage.setItem(STORE_KEY,JSON.stringify(state));}catch(e){} }
+function hasOverride(){ try{return !!localStorage.getItem(STORE_KEY);}catch(e){return false;} }
+const $=s=>document.querySelector(s);
 
-// ---- counts ----
-const cnt = (arr,k,v)=>arr.filter(x=>x[k]===v).length;
-const runN = cnt(D.lines,'run','运行');
-const fullN = cnt(D.lines,'eff','满效率');
-const testN = cnt(D.lines,'eff','待测') + cnt(D.lines,'eff',null);
-const p0 = D.bottlenecks.filter(b=>b.priority==='P0').length;
-const lackN = D.bomSummary.filter(b=>b.judge==='缺料').length;
+$('#hTitle').textContent=state.meta.title;
+$('#hSub').textContent=state.meta.subtitle;
+$('#hDate').textContent=state.meta.updated;
+$('#hSrc').textContent=state.meta.source;
+$('#fSrc').textContent=state.meta.source;
+const RC=state.regionColors||RC0;
 
-// ---- overview KPIs ----
-const kpis = [
-  {c:'c1',n:D.lines.length,l:'产线总数（8 大区域）'},
-  {c:'c2',n:runN,l:'运行中产线'},
-  {c:'c3',n:fullN,l:'满效率产线'},
-  {c:'c4',n:lackN,l:'物料缺料预警'},
-  {c:'c5',n:p0,l:'P0 高优瓶颈'},
-  {c:'c6',n:D.utilPower,l:'已知电力负载 (W)'},
-];
-$('#kpis').innerHTML = kpis.map(k=>`<div class="kpi ${k.c}"><div class="n">${k.n}</div><div class="l">${k.l}</div></div>`).join('');
+function badge(cls,txt){return `<span class="bd ${cls}">${txt}</span>`;}
+function runBadge(s){return {运行:'run',停机:'stop',爆仓:'over',限速:'limit'}[s]||'stop';}
+function effBadge(s){return {满效率:'full',半效率:'half',不产:'noprod',待测:'test'}[s]||'test';}
+function loopBadge(s){return s==='自循环'?'loop':(s==='需外补'?'need':'');}
+function esc(s){return (s==null?'':String(s)).replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function recomputeBom(){
+  state.bomSummary.forEach(b=>{
+    const inp=Number(b.input)||0,out=Number(b.output)||0;
+    b.net=out-inp;
+    if(inp===0&&out>0)b.judge='待实测';
+    else if(out>=inp&&out>0)b.judge='自平衡';
+    else if(out<inp)b.judge='缺料';
+    else b.judge='待实测';
+  });
+}
+function utilDerived(){
+  const u=state.utils;
+  return {
+    power:u.filter(x=>x.power).reduce((a,b)=>a+Number(b.power),0),
+    fullPipe:u.filter(x=>x.fullPipe==='是').length,
+    inert:u.filter(x=>x.inertEnv).length,
+    pumps:u.filter(x=>Number(x.pumps)>0).length,
+  };
+}
 
-// ---- filters ----
-const regions = [...new Set(D.lines.map(x=>x.region))];
-let cur = '全部';
-const fr = $('#filters');
-fr.innerHTML = ['全部',...regions].map(r=>`<div class="chip ${r==='全部'?'on':''}" data-r="${r}">${r==='全部'?'全部':r}</div>`).join('');
-fr.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{
-  cur = ch.dataset.r;
-  fr.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===ch));
-  renderLines();
-});
+function renderKpis(){
+  const L=state.lines,B=state.bomSummary;
+  const cnt=(k,v)=>L.filter(x=>x[k]===v).length;
+  const ud=utilDerived();
+  const kpis=[
+    {c:'c1',n:L.length,l:'产线总数（8 大区域）'},
+    {c:'c2',n:cnt('run','运行'),l:'运行中产线'},
+    {c:'c3',n:cnt('eff','满效率'),l:'满效率产线'},
+    {c:'c4',n:B.filter(b=>b.judge==='缺料').length,l:'物料缺料预警'},
+    {c:'c5',n:state.bottlenecks.filter(b=>b.priority==='P0').length,l:'P0 高优瓶颈'},
+    {c:'c6',n:ud.power,l:'已知电力负载 (W)'},
+  ];
+  $('#kpis').innerHTML=kpis.map(k=>`<div class="kpi ${k.c}"><div class="n">${k.n}</div><div class="l">${k.l}</div></div>`).join('');
+}
 
-function badge(cls,txt){return `<span class="bd ${cls}">${txt}</span>`}
-function runBadge(s){return {运行:'run',停机:'stop',爆仓:'over',限速:'limit'}[s]||'stop'}
-function effBadge(s){return {满效率:'full',半效率:'half',不产:'noprod',待测:'test'}[s]||'test'}
-function loopBadge(s){return s==='自循环'?'loop':(s==='需外补'?'need':'')}
-
+let cur='全部';
+function renderFilters(){
+  const regions=[...new Set(state.lines.map(x=>x.region))];
+  $('#filters').innerHTML=['全部',...regions].map(r=>
+    `<div class="chip ${r===cur?'on':''}" data-r="${r}">${r==='全部'?'全部':r}</div>`).join('');
+  $('#filters').querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{cur=ch.dataset.r;
+    $('#filters').querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===ch));renderLines();});
+}
 function renderLines(){
-  const list = cur==='全部'?D.lines:D.lines.filter(x=>x.region===cur);
-  $('#linesTag').textContent = list.length+' 条产线';
-  $('#lineGrid').innerHTML = list.map(l=>{
-    const col = RC[l.region]||'#888';
-    const th = l.theoryVal!=null?`${l.theoryVal} ${l.theoryUnit||''}`:'—';
-    const ac = l.actual!=null?l.actual:'—';
-    const bs=[];
-    if(l.run) bs.push(badge(runBadge(l.run),l.run));
-    if(l.eff) bs.push(badge(effBadge(l.eff),l.eff));
-    if(l.loop) bs.push(badge(loopBadge(l.loop),l.loop));
-    return `<div class="lc">
-      <div class="stripe" style="background:${col}"></div>
-      <div class="body">
-        <div class="nm">${l.name}<span class="id">${l.id}</span></div>
-        <div class="prod">主产物：<b>${l.product||'—'}</b> · <span style="color:${col};font-weight:600">${l.region}</span></div>
+  const list=cur==='全部'?state.lines:state.lines.filter(x=>x.region===cur);
+  $('#linesTag').textContent=list.length+' 条产线';
+  $('#lineGrid').innerHTML=list.map(l=>{
+    const col=RC[l.region]||'#888';
+    const th=l.theoryVal!=null?`${l.theoryVal} ${l.theoryUnit||''}`:'—';
+    const ac=l.actual!=null?l.actual:'—';
+    if(!editMode){
+      const bs=[];
+      if(l.run)bs.push(badge(runBadge(l.run),l.run));
+      if(l.eff)bs.push(badge(effBadge(l.eff),l.eff));
+      if(l.loop)bs.push(badge(loopBadge(l.loop),l.loop));
+      return `<div class="lc"><div class="stripe" style="background:${col}"></div><div class="body">
+        <div class="nm">${esc(l.name)}<span class="id">${esc(l.id)}</span></div>
+        <div class="prod">主产物：<b>${esc(l.product)||'—'}</b> · <span style="color:${col};font-weight:600">${esc(l.region)}</span></div>
         <div class="badges">${bs.join('')}</div>
         <div class="qty"><span>理论 <b>${th}</b></span><span>实测 <span class="bd actual">${ac}</span></span></div>
       </div></div>`;
+    }
+    const regions=[...new Set(state.lines.map(x=>x.region))];
+    return `<div class="lc"><div class="stripe" style="background:${col}"></div><div class="body">
+      <div class="nm"><input class="e" value="${esc(l.name)}" onchange="edLine('${l.id}','name',this.value)"><span class="id">${esc(l.id)}</span></div>
+      <div style="font-size:12px;color:#5b6478;margin-top:4px">区域 <select class="e" onchange="edLine('${l.id}','region',this.value)">${regions.map(r=>`<option ${r===l.region?'selected':''}>${r}</option>`).join('')}</select></div>
+      <div style="font-size:12px;color:#5b6478;margin-top:4px">主产物 <input class="e" value="${esc(l.product)}" onchange="edLine('${l.id}','product',this.value)"></div>
+      <div style="font-size:12px;color:#5b6478;margin-top:6px">运行状态 <select class="e" onchange="edLine('${l.id}','run',this.value)">${['运行','停机','爆仓','限速'].map(v=>`<option ${v===l.run?'selected':''}>${v}</option>`).join('')}</select>
+      效率 <select class="e" onchange="edLine('${l.id}','eff',this.value)">${['满效率','半效率','不产','待测'].map(v=>`<option ${v===l.eff?'selected':''}>${v}</option>`).join('')}</select>
+      循环 <select class="e" onchange="edLine('${l.id}','loop',this.value)">${['自循环','需外补'].map(v=>`<option ${v===l.loop?'selected':''}>${v}</option>`).join('')}</select></div>
+      <div style="font-size:12px;color:#5b6478;margin-top:6px">理论产量 <input class="e num" value="${l.theoryVal==null?'':l.theoryVal}" onchange="edLine('${l.id}','theoryVal',this.value)"> ${esc(l.theoryUnit)}</div>
+      <div style="font-size:12px;color:#5b6478;margin-top:4px">实测产量 <input class="e num" value="${l.actual==null?'':l.actual}" onchange="edLine('${l.id}','actual',this.value)"></div>
+      <div class="rowact"><button class="mini" onclick="delLine('${l.id}')">🗑 删除</button></div>
+    </div></div>`;
   }).join('');
 }
-renderLines();
 
-// ---- BOM ----
-const maxBom = Math.max(1,...D.bomSummary.map(b=>Math.max(b.input,b.output)));
-$('#bomBody').innerHTML = D.bomSummary.map(b=>{
-  const jc = b.judge==='缺料'?'j-bad':(b.judge==='自平衡'?'j-good':'j-wait');
-  const wO = (b.output/maxBom*100), wI = (b.input/maxBom*100);
-  const net = b.net>0?('+'+b.net):b.net;
-  return `<tr>
-    <td><b>${b.material}</b></td>
-    <td>${b.input||0}</td><td>${b.output||0}</td>
-    <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':'#b8860b')}">${net}</b></td>
-    <td><div class="bar"><i class="o" style="width:${wO}%"></i><i class="i" style="width:${wI}%"></i></div></td>
-    <td><span class="judge ${jc}">${b.judge}</span></td>
-  </tr>`;
-}).join('');
+function renderBom(){
+  const maxB=Math.max(1,...state.bomSummary.map(b=>Math.max(Number(b.input)||0,Number(b.output)||0)));
+  $('#bomBody').innerHTML=state.bomSummary.map((b,i)=>{
+    const jc=b.judge==='缺料'?'j-bad':(b.judge==='自平衡'?'j-good':'j-wait');
+    const wO=(Number(b.output)||0)/maxB*100,wI=(Number(b.input)||0)/maxB*100;
+    const net=b.net>0?('+'+b.net):b.net;
+    if(!editMode){
+      return `<tr><td><b>${esc(b.material)}</b></td><td>${b.input||0}</td><td>${b.output||0}</td>
+        <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':'#b8860b')}">${net}</b></td>
+        <td><div class="bar"><i class="o" style="width:${wO}%"></i><i class="i" style="width:${wI}%"></i></div></td>
+        <td><span class="judge ${jc}">${b.judge}</span></td><td class="hidden edcol"></td></tr>`;
+    }
+    return `<tr><td><input class="e" value="${esc(b.material)}" onchange="edBom(${i},'material',this.value)"></td>
+      <td><input class="e num" value="${b.input||0}" onchange="edBom(${i},'input',this.value)"></td>
+      <td><input class="e num" value="${b.output||0}" onchange="edBom(${i},'output',this.value)"></td>
+      <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':'#b8860b')}">${net}</b></td>
+      <td><div class="bar"><i class="o" style="width:${wO}%"></i><i class="i" style="width:${wI}%"></i></div></td>
+      <td><span class="judge ${jc}">${b.judge}</span></td>
+      <td class="edcol"><button class="mini" onclick="delBom(${i})">🗑</button></td></tr>`;
+  }).join('');
+}
 
-// ---- UTIL ----
-const uk = [
-  {c:'c6',n:D.utilPower,l:'已知电力 (W) · 高地机组'},
-  {c:'c2',n:D.utilFullPipeLines.length,l:'需满速水管产线'},
-  {c:'c4',n:D.utilInertLines.length,l:'惰气环境产线'},
-  {c:'c1',n:'2 / 0.5 / 0.33',l:'已知水泵数(台)·武陵/首墩/应龙'},
-];
-$('#utilKpis').innerHTML = uk.map(k=>`<div class="kpi ${k.c}"><div class="n">${k.n}</div><div class="l">${k.l}</div></div>`).join('');
-$('#utilBody').innerHTML = D.utils.map(u=>{
-  const pow = u.power!=null?u.power:'<span class="muted">待实测</span>';
-  const fp = u.fullPipe==='是'?'<span style="color:#06966f;font-weight:600">是</span>':(u.fullPipe==='否'?'否':'<span class="muted">—</span>');
-  const inert = u.inertEnv?'<span style="color:#2d6cdf;font-weight:600">是</span>':'<span class="muted">—</span>';
-  return `<tr><td><b>${u.id}</b></td><td>${pow}</td><td>${fp}</td><td>${inert}</td><td class="muted">${u.note||''}</td></tr>`;
-}).join('');
+function renderUtil(){
+  const ud=utilDerived();
+  $('#utilKpis').innerHTML=[
+    {c:'c6',n:ud.power,l:'已知电力 (W)'},
+    {c:'c2',n:ud.fullPipe,l:'需满速水管产线'},
+    {c:'c4',n:ud.inert,l:'惰气环境产线'},
+    {c:'c1',n:ud.pumps,l:'已记水泵产线'},
+  ].map(k=>`<div class="kpi ${k.c}"><div class="n">${k.n}</div><div class="l">${k.l}</div></div>`).join('');
+  $('#utilBody').innerHTML=state.utils.map(u=>{
+    if(!editMode){
+      const pow=u.power!=null?u.power:'<span class="muted">待实测</span>';
+      const fp=u.fullPipe==='是'?'<span style="color:#06966f;font-weight:600">是</span>':(u.fullPipe==='否'?'否':'<span class="muted">—</span>');
+      const inert=u.inertEnv?'<span style="color:#2d6cdf;font-weight:600">是</span>':'<span class="muted">—</span>';
+      return `<tr><td><b>${esc(u.id)}</b></td><td>${pow}</td><td>${u.pumps!=null?u.pumps:'<span class="muted">—</span>'}</td><td>${fp}</td><td>${inert}</td><td class="muted">${esc(u.note)}</td><td class="hidden edcol"></td></tr>`;
+    }
+    return `<tr><td><b>${esc(u.id)}</b></td>
+      <td><input class="e num" value="${u.power==null?'':u.power}" onchange="edUtil('${u.id}','power',this.value)"></td>
+      <td><input class="e num" value="${u.pumps==null?'':u.pumps}" onchange="edUtil('${u.id}','pumps',this.value)"></td>
+      <td><select class="e" onchange="edUtil('${u.id}','fullPipe',this.value)">${['是','否',''].map(v=>`<option ${v===u.fullPipe?'selected':''}>${v||'—'}</option>`).join('')}</select></td>
+      <td><select class="e" onchange="edUtil('${u.id}','inertEnv',this.value)">${[true,false].map(v=>`<option ${v===!!u.inertEnv?'selected':''}>${v?'是':'否'}</option>`).join('')}</select></td>
+      <td><input class="e" value="${esc(u.note)}" onchange="edUtil('${u.id}','note',this.value)"></td>
+      <td class="edcol"></td></tr>`;
+  }).join('');
+}
 
-// ---- KANBAN ----
-const cols=[['P0','高优·立即处理'],['P1','中优·本周排'],['P2','低优·有空再做']];
-$('#kanban').innerHTML = cols.map(([p,label])=>{
-  const items=D.bottlenecks.filter(b=>b.priority===p);
-  const cards=items.length?items.map(b=>`
-    <div class="bc ${p.toLowerCase()}">
-      <div class="t"><span>${b.id}</span><span class="sev ${b.severity}">${b.severity||'—'}</span></div>
-      <div class="row"><b>环节：</b>${b.stage||'—'}</div>
-      <div class="row"><b>原因：</b>${b.cause||'—'}</div>
-      <div class="fix"><b>改进方案：</b>${b.fix||'待定'}</div>
-      <div class="row" style="margin-top:8px"><b>状态：</b>${b.status||'待处理'}</div>
-    </div>`).join(''):'<div class="empty">暂无</div>';
-  return `<div class="col ${p.toLowerCase()}"><h3>${p} · ${label}</h3>${cards}</div>`;
-}).join('');
+function renderKanban(){
+  const cols=[['P0','高优·立即处理'],['P1','中优·本周排'],['P2','低优·有空再做']];
+  $('#kanban').innerHTML=cols.map(([p,label])=>{
+    const items=state.bottlenecks.filter(b=>b.priority===p);
+    const cards=items.length?items.map(b=>{
+      const idx=state.bottlenecks.indexOf(b);
+      if(!editMode){
+        return `<div class="bc ${p.toLowerCase()}"><div class="t"><span>${esc(b.id)}</span><span class="sev ${b.severity}">${b.severity||'—'}</span></div>
+          <div class="row"><b>环节：</b>${esc(b.stage)||'—'}</div>
+          <div class="row"><b>原因：</b>${esc(b.cause)||'—'}</div>
+          <div class="fix"><b>改进方案：</b>${esc(b.fix)||'待定'}</div>
+          <div class="row" style="margin-top:8px"><b>状态：</b>${esc(b.status)||'待处理'}</div></div>`;
+      }
+      return `<div class="bc ${p.toLowerCase()}"><div class="t"><input class="e sm" style="max-width:120px" value="${esc(b.id)}" onchange="edBn(${idx},'id',this.value)">
+        <select class="e sm" onchange="edBn(${idx},'severity',this.value)">${['高','中','低'].map(v=>`<option ${v===b.severity?'selected':''}>${v}</option>`).join('')}</select></div>
+        <div class="row"><b>环节</b><input class="e" value="${esc(b.stage)}" onchange="edBn(${idx},'stage',this.value)"></div>
+        <div class="row"><b>原因</b><input class="e" value="${esc(b.cause)}" onchange="edBn(${idx},'cause',this.value)"></div>
+        <div class="row"><b>改进</b><input class="e" value="${esc(b.fix)}" onchange="edBn(${idx},'fix',this.value)"></div>
+        <div class="row" style="margin-top:6px"><b>状态</b><select class="e" onchange="edBn(${idx},'status',this.value)">${['待处理','已解决'].map(v=>`<option ${v===b.status?'selected':''}>${v}</option>`).join('')}</select>
+        <b>优先级</b><select class="e" onchange="edBn(${idx},'priority',this.value)">${['P0','P1','P2'].map(v=>`<option ${v===b.priority?'selected':''}>${v}</option>`).join('')}</select></div>
+        <div class="rowact"><button class="mini" onclick="delBn(${idx})">🗑 删除</button></div></div>`;
+    }).join(''):'<div class="empty">暂无</div>';
+    return `<div class="col ${p.toLowerCase()}"><h3>${p} · ${label}</h3>${cards}</div>`;
+  }).join('');
+}
 
-// ---- KPI benchmark ----
-const kb=D.kpiBenchmark;
-const kmax=Math.max(kb.xiangrang,kb.battery,kb.yanzhen,kb.zhongxiangrang);
-const krows=[
-  {n:'息壤',v:kb.xiangrang},{n:'重息壤',v:kb.zhongxiangrang},
-  {n:'电池',v:kb.battery},{n:'中芽针药/赫铜零件',v:kb.yanzhen},
-];
-$('#kpiBody').innerHTML=krows.map(r=>`
-  <tr><td><b>${r.n}</b></td><td>${r.v}</td>
-  <td><div class="bar" style="min-width:160px"><i class="o" style="width:${r.v/kmax*100}%"></i></div></td></tr>`).join('');
+function renderKpi(){
+  const kb=state.kpiBenchmark;
+  const kmax=Math.max(kb.xiangrang,kb.battery,kb.yanzhen,kb.zhongxiangrang);
+  const rows=[{n:'息壤',v:kb.xiangrang},{n:'重息壤',v:kb.zhongxiangrang},{n:'电池',v:kb.battery},{n:'中芽针药/赫铜零件',v:kb.yanzhen}];
+  $('#kpiBody').innerHTML=rows.map(r=>`<tr><td><b>${r.n}</b></td>
+    <td>${editMode?`<input class="e num" value="${r.v}" onchange="edKpi('${r.n}',this.value)">`:r.v}</td>
+    <td><div class="bar" style="min-width:160px"><i class="o" style="width:${r.v/kmax*100}%"></i></div></td></tr>`).join('');
+}
 
-// ---- UPM ----
 const upm=[[2,30],[6,10],[10,6],[20,3],[0.5,120]];
 $('#upmBox').innerHTML=upm.map(([s,v])=>`<div class="u"><div class="a">${v}</div><div class="b">${s} 秒 1 个 → ${v} 个/分钟</div></div>`).join('');
+
+// ---- handlers ----
+function findLine(id){return state.lines.find(x=>x.id===id);}
+function numOr(v){ if(v===''||v==null)return null; const n=Number(v); return isNaN(n)?v:n; }
+function edLine(id,f,v){ const l=findLine(id); if(!l)return; l[f]=(f==='theoryVal'||f==='actual')?numOr(v):v;
+  if(f==='region'&&!RC[l.region])RC[l.region]='#888'; saveState(); renderKpis(); renderLines(); }
+function edBom(i,f,v){ const b=state.bomSummary[i]; if(!b)return; b[f]=(f==='input'||f==='output')?numOr(v):v; recomputeBom(); saveState(); renderBom(); renderKpis(); }
+function edUtil(id,f,v){ const u=state.utils.find(x=>x.id===id); if(!u)return; u[f]=(f==='power'||f==='pumps')?numOr(v):(f==='inertEnv'?(v==='true'):v); saveState(); renderUtil(); renderKpis(); }
+function edBn(i,f,v){ const b=state.bottlenecks[i]; if(!b)return; b[f]=v; saveState(); renderKanban(); renderKpis(); }
+function edKpi(n,v){ const kb=state.kpiBenchmark; const key={'息壤':'xiangrang','重息壤':'zhongxiangrang','电池':'battery','中芽针药/赫铜零件':'yanzhen'}[n]; if(key)kb[key]=numOr(v); saveState(); renderKpi(); }
+
+function regionCode(r){const m={'枢纽区':'HUB','谷底通道':'GDC','武陵城':'WLC','天王坪':'TWP','原始研究院':'ILY','高地':'HLW','首墩':'SD','应龙关':'YLG'};return m[r]||'NEW';}
+function nextId(){ let n=1; const ex=state.lines.map(x=>x.id); while(ex.includes('ZMD-NEW-'+String(n).padStart(2,'0')))n++; return 'ZMD-NEW-'+String(n).padStart(2,'0'); }
+function addLine(){ const region=cur==='全部'?'枢纽区':cur; state.lines.push({id:nextId(),region,name:'新产线',product:'',theoryVal:null,theoryUnit:'个/分钟',actual:null,blueprint:'',location:'',run:'运行',eff:'待测',loop:'需外补',note:'网页新增'}); saveState(); renderFilters(); renderLines(); renderKpis(); }
+function delLine(id){ state.lines=state.lines.filter(x=>x.id!==id); saveState(); renderFilters(); renderLines(); renderKpis(); }
+function addBom(){ state.bomSummary.push({material:'新物料',input:0,output:0,net:0,judge:'待实测'}); recomputeBom(); saveState(); renderBom(); }
+function delBom(i){ state.bomSummary.splice(i,1); saveState(); renderBom(); renderKpis(); }
+function addBn(){ state.bottlenecks.push({id:'ZMD-NEW',stage:'',cause:'',severity:'中',priority:'P1',fix:'',status:'待处理'}); saveState(); renderKanban(); renderKpis(); }
+function delBn(i){ state.bottlenecks.splice(i,1); saveState(); renderKanban(); renderKpis(); }
+
+function setEdit(on){
+  editMode=on;
+  $('#btnEdit').classList.toggle('on',on);
+  $('#btnEdit').textContent=on?'✅ 完成编辑':'✏️ 编辑模式';
+  ['btnAddLine','btnAddLine2','btnAddBom','btnAddBn','btnReset'].forEach(id=>$('#'+id).classList.toggle('hidden',!on));
+  document.querySelectorAll('.edcol').forEach(e=>e.classList.toggle('hidden',!on));
+  renderKpis();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi();
+}
+$('#btnEdit').onclick=()=>setEdit(!editMode);
+$('#btnAddLine').onclick=addLine; $('#btnAddLine2').onclick=addLine;
+$('#btnAddBom').onclick=addBom; $('#btnAddBn').onclick=addBn;
+$('#btnReset').onclick=()=>{ if(confirm('确定恢复为原始台账？本机所有修改将清空（公开站点不受影响）。')){ try{localStorage.removeItem(STORE_KEY);}catch(e){} state=JSON.parse(JSON.stringify(BASE)); setEdit(false); refreshAll(); updateBanner(); } };
+
+function buildExportObj(){
+  recomputeBom();
+  const ud=utilDerived();
+  const o=JSON.parse(JSON.stringify(state));
+  o.utilPower=ud.power;
+  o.utilFullPipeLines=state.utils.filter(x=>x.fullPipe==='是').map(x=>x.id);
+  o.utilInertLines=state.utils.filter(x=>x.inertEnv).map(x=>x.id);
+  o.utilPumpKnown={}; state.utils.forEach(x=>{ if(Number(x.pumps)>0)o.utilPumpKnown[x.id]=Number(x.pumps); });
+  return o;
+}
+$('#btnExport').onclick=()=>{
+  const obj=buildExportObj();
+  const txt='window.ZMD_DATA = '+JSON.stringify(obj,null,2)+';\n';
+  const blob=new Blob([txt],{type:'text/javascript'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='data.js'; a.click();
+  alert('已导出 data.js。\n\n更新公开站点方法：\n1) 把这个 data.js 发给我，或自己替换仓库 zmd/data.js\n2) 重新推送 GitHub 即可\n（也可直接发我，我帮你部署）');
+};
+$('#btnImport').onclick=()=>$('#fileInput').click();
+$('#fileInput').onchange=e=>{
+  const f=e.target.files[0]; if(!f)return; const rd=new FileReader();
+  rd.onload=()=>{ try{
+    let t=rd.result; if(t.indexOf('window.ZMD_DATA')>=0) t=t.replace(/^[\s\S]*?=\s*/,'').replace(/;\s*$/,'');
+    const obj=JSON.parse(t);
+    if(!obj.lines) throw '格式不对';
+    state=obj; saveState(); setEdit(false); refreshAll(); updateBanner();
+    alert('导入成功！');
+  }catch(err){ alert('导入失败：'+err); } };
+  rd.readAsText(f); e.target.value='';
+};
+
+function updateBanner(){ $('#obanner').classList.toggle('hidden',!hasOverride()); }
+function refreshAll(){ renderKpis();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi(); }
+
+setEdit(false);
+updateBanner();
 </script>
 </body>
 </html>
