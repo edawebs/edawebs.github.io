@@ -94,6 +94,7 @@
   .tbl tr:last-child td{border-bottom:none}
   .judge{font-weight:700;padding:3px 10px;border-radius:999px;font-size:12.5px;display:inline-block}
   .j-bad{background:#fdeaf2;color:#c2185b}.j-good{background:#e3fbf3;color:#06966f}.j-wait{background:#fff8e1;color:#b8860b}
+  .j-ext{background:#e6f1fb;color:#185FA5}
   .bar{height:9px;border-radius:6px;background:#eef0f6;overflow:hidden;display:flex;min-width:120px}
   .bar i{display:block;height:100%}
   .bar .o{background:linear-gradient(90deg,#00b894,#26d3a8)}
@@ -445,6 +446,7 @@ function recomputeBom(){
     const inp=Number(b.input)||0,out=Number(b.output)||0;
     b.net=out-inp;
     if(inp===0&&out>0)b.judge='待实测';
+    else if(out===0&&inp>0)b.judge='外补';
     else if(out>=inp&&out>0)b.judge='自平衡';
     else if(out<inp)b.judge='缺料';
     else b.judge='待实测';
@@ -472,7 +474,7 @@ function renderKpis(){
     {c:'c1',n:L.length,l:'产线总数（8 大区域）'},
     {c:'c2',n:cnt('run','运行'),l:'运行中产线'},
     {c:'c3',n:cnt('eff','满效率'),l:'满效率产线'},
-    {c:'c4',n:B.filter(b=>b.judge==='缺料').length,l:'物料缺料预警'},
+    {c:'c4',n:B.filter(b=>b.judge==='缺料').length,l:'真缺料（自己产却不够）'},
     {c:'c5',n:state.bottlenecks.filter(b=>b.priority==='P0').length,l:'P0 高优瓶颈'},
     {c:'c6',n:ud.power,l:'已知电力负载 (W)'},
   ];
@@ -524,19 +526,19 @@ function renderLines(){
 function renderBom(){
   const maxB=Math.max(1,...state.bomSummary.map(b=>Math.max(Number(b.input)||0,Number(b.output)||0)));
   $('#bomBody').innerHTML=state.bomSummary.map((b,i)=>{
-    const jc=b.judge==='缺料'?'j-bad':(b.judge==='自平衡'?'j-good':'j-wait');
+    const jc=b.judge==='缺料'?'j-bad':(b.judge==='自平衡'?'j-good':(b.judge==='外补'?'j-ext':'j-wait'));
     const wO=(Number(b.output)||0)/maxB*100,wI=(Number(b.input)||0)/maxB*100;
     const net=b.net>0?('+'+b.net):b.net;
     if(!editMode){
       return `<tr><td><b>${esc(b.material)}</b></td><td>${b.input||0}</td><td>${b.output||0}</td>
-        <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':'#b8860b')}">${net}</b></td>
+        <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':(b.judge==='外补'?'#185FA5':'#b8860b'))}">${net}</b></td>
         <td><div class="bar"><i class="o" style="width:${wO}%"></i><i class="i" style="width:${wI}%"></i></div></td>
         <td><span class="judge ${jc}">${b.judge}</span></td><td class="hidden edcol"></td></tr>`;
     }
     return `<tr><td><input class="e" value="${esc(b.material)}" onchange="edBom(${i},'material',this.value)"></td>
       <td><input class="e num" value="${b.input||0}" onchange="edBom(${i},'input',this.value)"></td>
       <td><input class="e num" value="${b.output||0}" onchange="edBom(${i},'output',this.value)"></td>
-      <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':'#b8860b')}">${net}</b></td>
+      <td><b style="color:${b.judge==='缺料'?'#c2185b':(b.judge==='自平衡'?'#06966f':(b.judge==='外补'?'#185FA5':'#b8860b'))}">${net}</b></td>
       <td><div class="bar"><i class="o" style="width:${wO}%"></i><i class="i" style="width:${wI}%"></i></div></td>
       <td><span class="judge ${jc}">${b.judge}</span></td>
       <td class="edcol"><button class="mini" onclick="delBom(${i})">🗑</button></td></tr>`;
@@ -708,6 +710,7 @@ function rebuildBom(){
     const b=map[k];
     b.net=b.output-b.input;
     if(b.input===0&&b.output>0) b.judge='待实测';
+    else if(b.output===0&&b.input>0) b.judge='外补';
     else if(b.output>=b.input&&b.output>0) b.judge='自平衡';
     else if(b.output<b.input) b.judge='缺料';
     else b.judge='待实测';
