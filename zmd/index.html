@@ -99,6 +99,71 @@
   .bar .o{background:linear-gradient(90deg,#00b894,#26d3a8)}
   .bar .i{background:linear-gradient(90deg,#e17055,#ff9b7a)}
   .muted{color:#aab;font-size:12px}
+  /* ===== SURVEY 产线普查 ===== */
+  .sv-bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+  .sv-new{font-family:inherit;font-size:15px;font-weight:800;padding:14px 24px;border-radius:14px;
+    border:none;background:var(--brand);color:#fff;cursor:pointer;box-shadow:0 8px 20px rgba(108,92,231,.26);transition:.15s}
+  .sv-new:hover{background:#5b4bcf;transform:translateY(-1px)}
+  .sv-stat{font-size:13px;color:var(--ink2);line-height:1.7}
+  .sv-stat b{color:var(--ink);font-size:15px}
+  .sv-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;
+    margin-bottom:20px;border:2px solid var(--brand)}
+  .sv-hd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+  .sv-hd b{font-size:16px}
+  .sv-x{border:none;background:#f1f2f8;width:34px;height:34px;border-radius:10px;cursor:pointer;
+    font-size:15px;color:var(--ink2);font-family:inherit;flex:none}
+  .sv-x:hover{background:#e6e8f2}
+  .sv-f{margin-bottom:18px}
+  .sv-lb{display:block;font-size:13.5px;font-weight:800;color:var(--ink);margin-bottom:9px}
+  .sv-lb i{color:#e84393;font-style:normal;margin-left:2px}
+  .sv-opt{font-weight:500;color:#aab;font-size:11.5px;margin-left:6px}
+  .sv-rgn{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  @media(min-width:680px){.sv-rgn{grid-template-columns:repeat(4,1fr)}}
+  .rgnb{font-family:inherit;font-size:14px;font-weight:700;padding:13px 6px;border-radius:12px;
+    border:2px solid var(--line);background:#fff;color:var(--ink2);cursor:pointer;transition:.14s}
+  .rgnb:hover{border-color:var(--brand);color:var(--brand)}
+  .rgnb.on{border-color:var(--c,var(--brand));background:var(--c,var(--brand));color:#fff}
+  .sv-in{width:100%;font-family:inherit;font-size:15px;padding:12px 14px;border:2px solid var(--line);
+    border-radius:12px;background:#fff;color:var(--ink)}
+  .sv-in:focus{outline:none;border-color:var(--brand)}
+  .sv-in.big{font-size:17px;font-weight:700}
+  .sv-in-row{display:flex;gap:7px;margin-bottom:8px;align-items:center}
+  .sv-in-row .mat{flex:1;min-width:0}
+  .sv-in-row .qty{width:74px;text-align:center;padding:12px 6px;flex:none}
+  .sv-in-row .rm{border:none;background:#fdeaf2;color:#c2185b;width:36px;height:44px;border-radius:11px;
+    cursor:pointer;font-size:14px;font-family:inherit;flex:none}
+  .sv-add{font-family:inherit;font-size:13px;font-weight:700;padding:11px 14px;border-radius:11px;
+    border:2px dashed var(--line);background:none;color:var(--ink2);cursor:pointer;width:100%;transition:.14s}
+  .sv-add:hover{border-color:var(--brand);color:var(--brand)}
+  .sv-more{margin-top:6px;border-top:1px dashed var(--line);padding-top:16px}
+  .sv-more summary{cursor:pointer;font-size:13.5px;font-weight:700;color:var(--brand);list-style:none}
+  .sv-more summary::-webkit-details-marker{display:none}
+  .sv-more summary::before{content:'\25B8';display:inline-block;margin-right:7px;transition:.2s}
+  .sv-more[open] summary::before{transform:rotate(90deg)}
+  .sv-grp{margin-bottom:20px}
+  .sv-gh{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--ink2);margin-bottom:9px}
+  .sv-gh .dt{width:9px;height:9px;border-radius:3px;flex:none}
+  .sv-gh em{font-style:normal;font-weight:500;color:#aab;font-size:12px}
+  .sv-item{background:#fff;border-radius:13px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px;
+    display:flex;align-items:center;gap:9px}
+  .sv-it{font-weight:700;font-size:14.5px}
+  .sv-is{font-size:12px;color:var(--ink2);margin-top:2px}
+  .sv-dots{font-size:10px;letter-spacing:2px;color:#d5d8e3;white-space:nowrap;flex:none}
+  .sv-dots b{color:#00b894;font-weight:400}
+  .sv-ed,.sv-del{border:none;font-family:inherit;font-size:12px;font-weight:700;padding:7px 11px;
+    border-radius:9px;cursor:pointer;flex:none}
+  .sv-ed{background:#eef0fb;color:var(--brand)}
+  .sv-del{background:#fdeaf2;color:#c2185b}
+  .sv-empty{text-align:center;padding:46px 18px;color:var(--ink2);font-size:14px;background:#fff;
+    border-radius:var(--radius);box-shadow:var(--shadow);border:2px dashed var(--line);line-height:1.9}
+  .sv-toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:#1f2533;color:#fff;
+    font-size:13.5px;font-weight:700;padding:12px 22px;border-radius:13px;opacity:0;pointer-events:none;
+    transition:.22s;z-index:999;box-shadow:0 8px 26px rgba(31,37,51,.28)}
+  .sv-toast.on{opacity:1;transform:translate(-50%,0)}
+  @media(max-width:520px){
+    .sv-card{padding:15px}.sv-in{font-size:16px}
+    .sv-item{padding:11px 12px}.sv-dots{letter-spacing:1px}
+  }
   /* ===== PROBE 摸底巡检 ===== */
   .probe{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px}
   .p-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
@@ -238,7 +303,7 @@
 </div></div>
 
 <nav><div class="wrap">
-  <a href="#probe" class="hot">🎯 摸底巡检</a>
+  <a href="#survey" class="hot">📋 产线普查</a>
   <a href="#overview">概览</a>
   <a href="#lines">产线总览</a>
   <a href="#bom">物料平衡</a>
@@ -262,22 +327,17 @@
 
 <div class="wrap">
 
-  <section id="probe">
-    <div class="sec-head"><h2>🎯 摸底巡检</h2><span class="tag">今天就用这个</span></div>
-    <p class="sec-sub">一次只看一条线，<b>点一下状态就记下来</b>，不用填 13 个格子。先扫一遍"在不在转"，异常的线才展开原因。26 条大约 10 分钟走完，采完自动出体检报告。</p>
+  <section id="survey">
+    <div class="sec-head"><h2>📋 产线普查</h2><span class="tag">从零开始记</span></div>
+    <p class="sec-sub">每条线只强制填 <b>区域 · 产什么 · 现在状态</b>，20 秒能记一条。产量、原料看到就填，看不到先跳过——下面的清单会用点点标出还缺什么，之后随时回来补。</p>
 
-    <div class="probe">
-      <div class="p-top">
-        <div class="p-bar"><i id="pFill"></i></div>
-        <div class="p-num" id="pNum">已采 <b>0</b> / 0</div>
-        <select class="p-jump" id="pJump"></select>
-        <button class="p-nav ghost" id="pReportBtn" style="padding:8px 12px;font-size:12.5px">🩺 体检报告</button>
-        <button class="p-nav ghost" id="pCsvBtn" style="padding:8px 12px;font-size:12.5px">⬇️ 导出 CSV</button>
-      </div>
-      <div id="pHost"></div>
+    <div class="sv-bar">
+      <button class="sv-new" id="svNew">＋ 记一条产线</button>
+      <div class="sv-stat" id="svStat"></div>
     </div>
 
-    <div id="pReport"></div>
+    <div id="svForm"></div>
+    <div id="svList"></div>
   </section>
 
   <section id="overview">
@@ -357,7 +417,7 @@
 
 <script src="data.js"></script>
 <script>
-const STORE_KEY='zmd_state_v1';
+const STORE_KEY='zmd_state_v2';
 const RC0=(window.ZMD_DATA&&window.ZMD_DATA.regionColors)||{};
 const BASE=JSON.parse(JSON.stringify(window.ZMD_DATA));
 let state=loadState();
@@ -402,6 +462,10 @@ function utilDerived(){
 
 function renderKpis(){
   const L=state.lines,B=state.bomSummary;
+  if(!L.length){
+    $('#kpis').innerHTML='<div style="grid-column:1/-1;background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:2px dashed var(--line);text-align:center;color:var(--ink2);font-size:14px;line-height:1.9">台账还是空的。<br>先去上面「<b style="color:#6C5CE7">📋 产线普查</b>」录第一条产线，这里就会自动出数。</div>';
+    return;
+  }
   const cnt=(k,v)=>L.filter(x=>x[k]===v).length;
   const ud=utilDerived();
   const kpis=[
@@ -561,271 +625,359 @@ function delBom(i){ state.bomSummary.splice(i,1); saveState(); renderBom(); rend
 function addBn(){ state.bottlenecks.push({id:'ZMD-NEW',stage:'',cause:'',severity:'中',priority:'P1',fix:'',status:'待处理'}); saveState(); renderKanban(); renderKpis(); }
 function delBn(i){ state.bottlenecks.splice(i,1); saveState(); renderKanban(); renderKpis(); }
 
-/* ================= 摸底巡检 ================= */
-const PS=[
-  {k:'ok',   ic:'🟢', t:'正常满速',  d:'在转·不堆料'},
-  {k:'slow', ic:'🟡', t:'跑得慢',    d:'在转但没到理论'},
-  {k:'down', ic:'🔴', t:'停了/不产', d:'不出货或卡死'},
-  {k:'power',ic:'⚡', t:'只发电',    d:'全部转去发电'},
+/* ================= 产线普查（从零录入） ================= */
+const REGIONS=Object.keys(state.regionColors||{});
+const HINTS=(window.ZMD_DATA&&window.ZMD_DATA.productHints)||[];
+const SST=[
+  {k:'ok',   ic:'🟢', t:'正常满速'},
+  {k:'slow', ic:'🟡', t:'跑得慢'},
+  {k:'down', ic:'🔴', t:'停了'},
+  {k:'power',ic:'⚡', t:'只发电'},
 ];
-const PC=[
+const SCAUSE=[
   {k:'mat',t:'缺原料'},{k:'water',t:'水/泵不足'},{k:'power',t:'电力不足'},
   {k:'store',t:'爆仓'},{k:'terrain',t:'地形布局'},{k:'other',t:'其他'},
 ];
-const P_SMAP={ok:'正常满速',slow:'跑得慢',down:'停/不产',power:'只发电'};
-const P_CMAP={mat:'缺原料',water:'水/泵不足',power:'电力不足',store:'爆仓',terrain:'地形布局',other:'其他'};
-const P_ORDER=['枢纽区','谷底通道','武陵城','天王坪','原始研究院','高地','首墩','应龙关'];
-let pIdx=0, pShowReport=false;
 
-function pInit(){ if(!state.probe||typeof state.probe!=='object') state.probe={}; }
-function pList(){
-  return state.lines.slice().sort((a,b)=>{
-    const ia=P_ORDER.indexOf(a.region), ib=P_ORDER.indexOf(b.region);
-    const x=ia<0?99:ia, y=ib<0?99:ib;
-    if(x!==y) return x-y;
-    return String(a.id).localeCompare(String(b.id));
-  });
-}
+let lastRegion='';
+let svOpen=false;
+let draft=null;
+
 function rcOf(r){
   try{ const m=state.regionColors||window.ZMD_DATA.regionColors||{}; return m[r]||'#6C5CE7'; }catch(e){ return '#6C5CE7'; }
 }
-function pRec(id,patch){
-  const cur=state.probe[id]||{s:null,rate:null,unit:'upm',cause:null,note:'',t:''};
-  state.probe[id]=Object.assign(cur,patch,{t:new Date().toLocaleString('zh-CN',{hour12:false})});
-  saveState();
+function svToast(msg){
+  let t=document.getElementById('svToast');
+  if(!t){ t=document.createElement('div'); t.id='svToast'; t.className='sv-toast'; document.body.appendChild(t); }
+  t.textContent=msg; t.classList.add('on');
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),1700);
 }
-function pConvTxt(e){
-  const r=Number(e.rate);
+function svBlank(){
+  return {
+    id:null, editing:false,
+    region:lastRegion||'', product:'', name:'',
+    status:'ok', cause:null,
+    actual:null, actualUnit:'个/分钟',
+    inputs:[], byproducts:[],
+    blueprint:'', location:'', note:'',
+    power:null, pumps:null, inert:null
+  };
+}
+function svFromLine(l){
+  const st=l.status || (l.eff==='不产' ? (l.run==='停机'?'down':'power') : (l.eff==='半效率'?'slow':'ok'));
+  return {
+    id:l.id, editing:true,
+    region:l.region||'', product:l.product||'', name:l.name||'',
+    status:st, cause:l.cause||null,
+    actual:(l.actual==null?'':l.actual), actualUnit:l.actualUnit||'个/分钟',
+    inputs:(l.inputs||[]).map(x=>({material:x.material||'',qty:(x.qty==null?'':x.qty),unit:x.unit||'条/分钟'})),
+    byproducts:(l.byproducts||[]).slice(),
+    blueprint:l.blueprint||'', location:l.location||'', note:l.note||'',
+    power:(l.power==null?'':l.power), pumps:(l.pumps==null?'':l.pumps), inert:(l.inert==null?'':l.inert)
+  };
+}
+function convTxt(d){
+  const r=Number(d.actual);
   if(!r||r<=0) return '';
-  return e.unit==='spu' ? '≈ '+(60/r).toFixed(1)+' 个/分钟' : '≈ '+(60/r).toFixed(1)+' 秒/个';
+  return d.actualUnit==='秒/个' ? '≈ '+(60/r).toFixed(1)+' 个/分钟' : '≈ '+(60/r).toFixed(1)+' 秒/个';
 }
-function pScroll(){ const el=$('#pHost'); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
-function pJumpTo(id){
-  const i=pList().findIndex(l=>l.id===id);
-  if(i>=0){ pIdx=i; pShowReport=false; renderProbe(); pScroll(); }
+function svNextId(region){
+  const code=({'枢纽区':'HUB','谷底通道':'GDC','武陵城':'WLC','天王坪':'TWP','原始研究院':'ILY','高地':'HLW','首墩':'SD','应龙关':'YLG'})[region]||'ZMD';
+  const used=new Set(state.lines.map(x=>x.id));
+  let n=1;
+  while(used.has('ZMD-'+code+'-'+String(n).padStart(2,'0'))) n++;
+  return 'ZMD-'+code+'-'+String(n).padStart(2,'0');
 }
-function pGoNext(curId,skip){
-  const L=pList();
-  if(!skip && !(state.probe[curId]&&state.probe[curId].s)) pRec(curId,{s:'ok'});
-  const i=L.findIndex(x=>x.id===curId);
-  for(let k=1;k<=L.length;k++){
-    const j=(i+k)%L.length;
-    if(!(state.probe[L[j].id]&&state.probe[L[j].id].s)){ pIdx=j; break; }
+
+function rebuildBom(){
+  const rows=[];
+  state.lines.forEach(l=>{
+    if(l.product) rows.push({lineId:l.id,dir:'产出',material:l.product,qty:Number(l.actual)||0,unit:'个/分钟',note:null});
+    (l.byproducts||[]).forEach(b=>{ if(b) rows.push({lineId:l.id,dir:'产出',material:b,qty:0,unit:'个/分钟',note:'副产物'}); });
+    (l.inputs||[]).forEach(i=>{ if(i.material) rows.push({lineId:l.id,dir:'投入',material:i.material,qty:Number(i.qty)||0,unit:i.unit||'条/分钟',note:null}); });
+  });
+  state.bomDetail=rows;
+  const map={};
+  rows.forEach(r=>{
+    const m=r.material; if(!m) return;
+    if(!map[m]) map[m]={material:m,input:0,output:0,net:0,judge:''};
+    if(r.dir==='投入') map[m].input+=Number(r.qty)||0;
+    else map[m].output+=Number(r.qty)||0;
+  });
+  state.bomSummary=Object.keys(map).map(k=>{
+    const b=map[k];
+    b.net=b.output-b.input;
+    if(b.input===0&&b.output>0) b.judge='待实测';
+    else if(b.output>=b.input&&b.output>0) b.judge='自平衡';
+    else if(b.output<b.input) b.judge='缺料';
+    else b.judge='待实测';
+    return b;
+  });
+  state.utils=state.lines.map(l=>({
+    id:l.id, power:(l.power===''||l.power==null)?null:Number(l.power),
+    pumps:(l.pumps===''||l.pumps==null)?null:Number(l.pumps),
+    fullPipe:'是', inert:(l.inert===''||l.inert==null)?null:Number(l.inert),
+    storage:null, terrain:l.location||'', note:'',
+    inertEnv: Number(l.inert)>0
+  }));
+}
+
+function svSync(){
+  if(!svOpen||!draft) return;
+  const g=id=>{ const e=document.getElementById(id); return e?e.value:null; };
+  draft.product=g('svProd')||'';
+  draft.name=g('svName')||'';
+  draft.actual=g('svRate');
+  draft.actualUnit=g('svUnit')||'个/分钟';
+  draft.blueprint=g('svBp')||'';
+  draft.location=g('svLoc')||'';
+  draft.note=g('svNote')||'';
+  draft.power=g('svPw'); draft.pumps=g('svPump'); draft.inert=g('svInert');
+  const bp=g('svBpMore');
+  if(bp!==null) draft.byproducts=bp.split(/[、,，\s]+/).filter(Boolean);
+  const box=document.getElementById('svInputs');
+  if(box){
+    draft.inputs=[];
+    box.querySelectorAll('.sv-in-row').forEach(r=>{
+      const m=r.querySelector('.mat'), q=r.querySelector('.qty'), u=r.querySelector('select');
+      draft.inputs.push({material:m?m.value:'',qty:q?q.value:'',unit:u?u.value:'条/分钟'});
+    });
   }
-  renderProbe(); pScroll();
 }
 
-function renderProbe(){
-  pInit();
-  const L=pList();
-  if(!L.length){ $('#pHost').innerHTML='<div class="p-done"><div class="big">📭</div><h3>台账里还没有产线</h3></div>'; return; }
-  const total=L.length;
-  const done=L.filter(l=>state.probe[l.id]&&state.probe[l.id].s).length;
-  $('#pFill').style.width=(total?done/total*100:0).toFixed(1)+'%';
-  $('#pNum').innerHTML='已采 <b>'+done+'</b> / '+total;
+function inRow(x,i){
+  return `<div class="sv-in-row" data-i="${i}">
+    <input class="sv-in mat" list="svHints" placeholder="原料名" value="${esc(x.material||'')}">
+    <input class="sv-in qty" type="number" step="0.1" min="0" inputmode="decimal" placeholder="数量" value="${x.qty===''||x.qty==null?'':x.qty}">
+    <select class="sv-in" style="width:96px;padding:11px 6px">
+      <option value="条/分钟"${x.unit!=='个/分钟'?' selected':''}>条/分</option>
+      <option value="个/分钟"${x.unit==='个/分钟'?' selected':''}>个/分</option>
+    </select>
+    <button class="rm" data-rm="${i}" title="删掉这行">✕</button>
+  </div>`;
+}
 
-  const regions=[...new Set(L.map(l=>l.region))];
-  $('#pJump').innerHTML='<option value="">跳到区域…</option>'+regions.map(r=>'<option value="'+r+'">'+r+'</option>').join('');
-
-  if(pShowReport){ $('#pHost').style.display='none'; $('#pReport').classList.remove('hidden'); renderReport(); return; }
-  $('#pHost').style.display=''; $('#pReport').classList.add('hidden');
-
-  if(pIdx<0||pIdx>=total) pIdx=0;
-  const l=L[pIdx], e=state.probe[l.id]||{}, bad=!!e.s&&e.s!=='ok', rc=rcOf(l.region);
-
-  const tip = (done===total)
-    ? '<div style="background:#e3fbf3;border:1px solid #b8f0dd;border-radius:14px;padding:13px 16px;margin-bottom:14px;font-size:13.5px;color:#06966f;font-weight:700">🎉 '+total+' 条全部采完了！点右上角「🩺 体检报告」看整体结论，也可以用 ← 回看修正。</div>'
-    : '';
-
-  const card=`
-  <div class="p-card ${e.s?(bad?'done-bad':'done-ok'):''}">
-    <div class="p-head">
-      <div class="p-stripe" style="background:${rc}"></div>
-      <div style="min-width:0;flex:1">
-        <div class="p-name">${esc(l.name||l.id)}</div>
-        <div class="p-meta">${esc(l.region)}${l.location?' · '+esc(l.location):''} · 主产物 <b>${esc(l.product||'—')}</b>${e.t?' · 上次采集 '+esc(e.t):''}</div>
-      </div>
-      <div class="p-idx">${pIdx+1} / ${total}</div>
+function renderForm(){
+  const host=$('#svForm');
+  if(!svOpen||!draft){ host.innerHTML=''; return; }
+  const d=draft;
+  host.innerHTML=`
+  <div class="sv-card">
+    <div class="sv-hd">
+      <b>${d.editing?'✏️ 修改产线 · '+esc(d.id||''):'＋ 记一条新产线'}</b>
+      <button class="sv-x" id="svClose" title="收起">✕</button>
     </div>
-    <div class="p-body">
-      <div class="p-lbl"><span class="n">1</span>这条线现在什么状态？</div>
-      <div class="p-states">
-        ${PS.map(s=>`<button class="p-st s-${s.k} ${e.s===s.k?'on':''}" data-s="${s.k}">
-          <span class="ic">${s.ic}</span>${s.t}<span class="ds">${s.d}</span></button>`).join('')}
-      </div>
 
-      <div class="p-rate">
-        <span class="p-lbl" style="margin:0"><span class="n">2</span>面板产量</span>
-        <input id="pRate" type="number" step="0.1" min="0" inputmode="decimal" placeholder="—" value="${e.rate==null?'':e.rate}">
-        <select id="pUnit">
-          <option value="upm"${e.unit!=='spu'?' selected':''}>个/分钟</option>
-          <option value="spu"${e.unit==='spu'?' selected':''}>秒/个</option>
-        </select>
-        <span class="tip" id="pConv">${pConvTxt(e)}</span>
+    <div class="sv-f">
+      <label class="sv-lb">1 · 在哪个区 <i>*</i></label>
+      <div class="sv-rgn" id="svRgn">
+        ${REGIONS.map(r=>`<button class="rgnb ${d.region===r?'on':''}" data-r="${r}" style="--c:${rcOf(r)}">${r}</button>`).join('')}
       </div>
+    </div>
 
-      ${bad?`<div style="margin-top:16px">
-        <div class="p-lbl"><span class="n">3</span>卡在哪一环？<span style="font-weight:500;color:#aab;font-size:11.5px">选一个最像的</span></div>
-        <div class="p-causes">${PC.map(c=>`<button class="p-cause ${e.cause===c.k?'on':''}" data-c="${c.k}">${c.t}</button>`).join('')}</div>
+    <div class="sv-f">
+      <label class="sv-lb">2 · 这条线产什么 <i>*</i></label>
+      <input class="sv-in big" id="svProd" list="svHints" placeholder="例：中级电池" value="${esc(d.product)}">
+      <datalist id="svHints">${HINTS.map(m=>'<option value="'+esc(m)+'">').join('')}</datalist>
+    </div>
+
+    <div class="sv-f">
+      <label class="sv-lb">3 · 现在什么状态 <i>*</i></label>
+      <div class="p-states" id="svStates">
+        ${SST.map(s=>`<button class="p-st s-${s.k} ${d.status===s.k?'on':''}" data-s="${s.k}">
+          <span class="ic">${s.ic}</span>${s.t}</button>`).join('')}
+      </div>
+      ${d.status!=='ok'?`<div class="p-causes" style="margin-top:10px" id="svCauses">
+        ${SCAUSE.map(c=>`<button class="p-cause ${d.cause===c.k?'on':''}" data-c="${c.k}">${c.t}</button>`).join('')}
       </div>`:''}
+    </div>
 
+    <div class="sv-f">
+      <label class="sv-lb">4 · 产量 <span class="sv-opt">面板写多少填多少，不填也行</span></label>
+      <div class="p-rate" style="margin:0">
+        <input id="svRate" type="number" step="0.1" min="0" inputmode="decimal" placeholder="—" value="${d.actual===null||d.actual===''?'':d.actual}">
+        <select id="svUnit">
+          <option value="个/分钟"${d.actualUnit!=='秒/个'?' selected':''}>个/分钟</option>
+          <option value="秒/个"${d.actualUnit==='秒/个'?' selected':''}>秒/个</option>
+        </select>
+        <span class="tip" id="svConv">${convTxt(d)}</span>
+      </div>
+    </div>
+
+    <div class="sv-f">
+      <label class="sv-lb">5 · 它吃什么料 <span class="sv-opt">看不到就跳过</span></label>
+      <div id="svInputs">${d.inputs.map((x,i)=>inRow(x,i)).join('')}</div>
+      <button class="sv-add" id="svAddIn">＋ 加一种原料</button>
+    </div>
+
+    <details class="sv-more">
+      <summary>更多（副产物 / 蓝图码 / 位置 / 水电 / 备注）</summary>
       <div style="margin-top:16px">
-        <div class="p-lbl" style="margin-bottom:6px"><span class="n">${bad?'4':'3'}</span>一句话备注<span style="font-weight:500;color:#aab;font-size:11.5px">可选</span></div>
-        <input class="p-note" id="pNote" value="${esc(e.note||'')}" placeholder="例：末端堆满没人取 / 泵只开了半台 / 蓝图忘了存">
+        <div class="sv-f">
+          <label class="sv-lb">副产物 <span class="sv-opt">一机多产时填，用、隔开</span></label>
+          <input class="sv-in" id="svBpMore" placeholder="例：砂草、晶体壳粉" value="${esc((d.byproducts||[]).join('、'))}">
+        </div>
+        <div class="sv-f">
+          <label class="sv-lb">这条线叫什么 <span class="sv-opt">不填就自动用「产物-线」</span></label>
+          <input class="sv-in" id="svName" placeholder="例：武陵中电池线" value="${esc(d.name)}">
+        </div>
+        <div class="sv-f">
+          <label class="sv-lb">蓝图码</label>
+          <input class="sv-in" id="svBp" placeholder="有就抄过来，以后能复原" value="${esc(d.blueprint)}">
+        </div>
+        <div class="sv-f">
+          <label class="sv-lb">位置 <span class="sv-opt">怎么找到它</span></label>
+          <input class="sv-in" id="svLoc" placeholder="例：骨架上方第三层 / 靠黄线 3 格" value="${esc(d.location)}">
+        </div>
+        <div class="sv-f">
+          <label class="sv-lb">公辅</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input class="sv-in" id="svPw" type="number" inputmode="numeric" placeholder="电力 W" value="${d.power===''||d.power==null?'':d.power}" style="width:112px">
+            <input class="sv-in" id="svPump" type="number" inputmode="numeric" placeholder="水泵台数" value="${d.pumps===''||d.pumps==null?'':d.pumps}" style="width:112px">
+            <input class="sv-in" id="svInert" type="number" step="0.1" inputmode="decimal" placeholder="惰气/分钟" value="${d.inert===''||d.inert==null?'':d.inert}" style="width:118px">
+          </div>
+        </div>
+        <div class="sv-f">
+          <label class="sv-lb">备注</label>
+          <input class="sv-in" id="svNote" placeholder="坑点、待办、想法…" value="${esc(d.note)}">
+        </div>
       </div>
+    </details>
 
-      <div class="p-actions">
-        <button class="p-nav" id="pPrev" ${pIdx===0?'disabled':''}>← 上一条</button>
-        <button class="p-skip" id="pSkip">跳过这条</button>
-        <button class="p-nav main" id="pNext">${e.s?'✓ 已记录 · 下一条 →':'下一条 →'}</button>
-      </div>
+    <div class="p-actions" style="margin-top:20px">
+      <button class="p-nav" id="svCancel">取消</button>
+      <button class="p-nav main" id="svSave">${d.editing?'✓ 保存修改':'✓ 保存，接着记下一条'}</button>
     </div>
   </div>`;
-
-  $('#pHost').innerHTML=tip+card;
-
-  $('#pHost').querySelectorAll('.p-st').forEach(b=>b.addEventListener('click',()=>{
-    pRec(l.id,{s:b.dataset.s}); renderProbe();
-  }));
-  $('#pHost').querySelectorAll('.p-cause').forEach(b=>b.addEventListener('click',()=>{
-    const cur=state.probe[l.id]||{};
-    pRec(l.id,{cause:cur.cause===b.dataset.c?null:b.dataset.c}); renderProbe();
-  }));
-  $('#pRate').addEventListener('change',ev=>{
-    const v=ev.target.value.trim();
-    pRec(l.id,{rate:v===''?null:Number(v)}); renderProbe();
-  });
-  $('#pUnit').addEventListener('change',ev=>{ pRec(l.id,{unit:ev.target.value}); renderProbe(); });
-  $('#pNote').addEventListener('change',ev=>{ pRec(l.id,{note:ev.target.value}); });
-  $('#pPrev').addEventListener('click',()=>{ if(pIdx>0){pIdx--;renderProbe();pScroll();} });
-  $('#pSkip').addEventListener('click',()=>pGoNext(l.id,true));
-  $('#pNext').addEventListener('click',()=>pGoNext(l.id,false));
+  bindForm();
 }
 
-function renderReport(){
-  pInit();
-  const L=pList();
-  const got=L.filter(l=>state.probe[l.id]&&state.probe[l.id].s);
-  const cnt=k=>got.filter(l=>state.probe[l.id].s===k).length;
-  const un=L.length-got.length;
-
-  const regs=[...new Set(L.map(l=>l.region))];
-  const regRows=regs.map(r=>{
-    const ls=L.filter(l=>l.region===r);
-    const g=ls.filter(l=>state.probe[l.id]&&state.probe[l.id].s);
-    return {r:r, total:ls.length, done:g.length, bad:g.filter(l=>state.probe[l.id].s!=='ok').length};
-  });
-
-  const causeRows=PC.map(c=>({t:c.t,n:got.filter(l=>state.probe[l.id].cause===c.k).length})).filter(x=>x.n>0);
-  const w={down:0,power:1,slow:2};
-  const todo=got.filter(l=>state.probe[l.id].s!=='ok')
-    .sort((a,b)=>(w[state.probe[a.id].s]??9)-(w[state.probe[b.id].s]??9));
-
-  const kpiHtml=`
-    <div class="rep">
-      <div class="rc g"><div class="v">${cnt('ok')}</div><div class="k">🟢 正常满速</div></div>
-      <div class="rc o"><div class="v">${cnt('slow')}</div><div class="k">🟡 跑得慢</div></div>
-      <div class="rc r"><div class="v">${cnt('down')}</div><div class="k">🔴 停 / 不产</div></div>
-      <div class="rc b"><div class="v">${cnt('power')}</div><div class="k">⚡ 只发电</div></div>
-      <div class="rc"><div class="v">${un}</div><div class="k">⬜ 还没采</div></div>
-    </div>`;
-
-  const regTbl=`
-    <div class="tbl" style="margin-bottom:18px"><table>
-      <thead><tr><th>区域</th><th>产线数</th><th>已采</th><th>有问题</th><th>问题占比</th></tr></thead>
-      <tbody>${regRows.map(x=>{
-        const pct=x.done?Math.round(x.bad/x.done*100):0;
-        const cls=pct===0?'j-good':(pct>=50?'j-bad':'j-wait');
-        return `<tr><td><b>${esc(x.r)}</b></td><td>${x.total}</td><td>${x.done}</td><td>${x.bad}</td>
-          <td><span class="judge ${cls}">${x.done?pct+'%':'—'}</span></td></tr>`;
-      }).join('')}</tbody>
-    </table></div>`;
-
-  const causeHtml = causeRows.length
-    ? `<div class="rep" style="margin-bottom:18px">${causeRows.map(c=>`<div class="rc o"><div class="v">${c.n}</div><div class="k">${esc(c.t)}</div></div>`).join('')}</div>`
-    : '<div class="hint">还没有标记卡点。选 🟡/🔴/⚡ 的线会展开「卡在哪一环」，选了才会统计到这里。</div>';
-
-  const todoHtml = todo.length
-    ? todo.map(l=>{
-        const e=state.probe[l.id];
-        return `<div class="t ${e.s==='down'?'r':(e.s==='power'?'b':'')}">
-          <div style="flex:1;min-width:0">
-            <div class="nm">${esc(l.name||l.id)} <span class="bd ${e.s==='down'?'noprod':(e.s==='power'?'limit':'half')}">${P_SMAP[e.s]||e.s}</span></div>
-            <div class="why">${esc(l.region)} · ${esc(l.product||'—')}${e.cause?' · 卡点：<b>'+P_CMAP[e.cause]+'</b>':''}${e.note?' · '+esc(e.note):''}</div>
-          </div>
-          <button class="go" data-goto="${l.id}">去改</button>
-        </div>`;
-      }).join('')
-    : '<div style="background:#e3fbf3;border-radius:14px;padding:18px;text-align:center;color:#06966f;font-weight:700">✅ 已采的产线全部正常，没有待办。</div>';
-
-  $('#pReport').innerHTML=`
-    <div class="sec-head" style="margin-top:26px"><h2>🩺 摸底体检报告</h2><span class="tag">已采 ${got.length} / ${L.length}</span>
-      <button class="p-nav ghost" id="pBack" style="padding:7px 12px;font-size:12.5px;margin-left:auto">← 回到巡检</button></div>
-    ${kpiHtml}
-    <div class="sec-head" style="margin-top:10px"><h2 style="font-size:16px">📍 按区域看问题</h2></div>
-    ${regTbl}
-    <div class="sec-head" style="margin-top:6px"><h2 style="font-size:16px">🧯 卡点分布</h2></div>
-    ${causeHtml}
-    <div class="sec-head" style="margin-top:22px"><h2 style="font-size:16px">🔧 待处理清单</h2><span class="tag">停机的排前面</span></div>
-    <div class="todo">${todoHtml}</div>
-    <div style="margin-top:22px;background:#f7f8fd;border-radius:14px;padding:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-      <button class="p-nav main" id="pApply" style="margin-left:0">⤵️ 写回台账</button>
-      <button class="p-nav" id="pCsv2">⬇️ 导出 CSV</button>
-      <span style="font-size:12.5px;color:var(--ink2);flex:1;min-width:200px">「写回台账」会把摸底的状态和产量填进产线台账，之后「总览」「产线总览」自动更新。</span>
-    </div>`;
-
-  $('#pBack').addEventListener('click',()=>{ pShowReport=false; renderProbe(); });
-  $('#pApply').addEventListener('click',applyProbeToLines);
-  $('#pCsv2').addEventListener('click',exportProbeCsv);
-  $('#pReport').querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>pJumpTo(b.dataset.goto)));
+function bindForm(){
+  $('#svClose').onclick=()=>{ svOpen=false; draft=null; renderForm(); };
+  $('#svCancel').onclick=()=>{ svOpen=false; draft=null; renderForm(); };
+  $('#svRgn').querySelectorAll('.rgnb').forEach(b=>b.onclick=()=>{ svSync(); draft.region=b.dataset.r; renderForm(); });
+  $('#svStates').querySelectorAll('.p-st').forEach(b=>b.onclick=()=>{ svSync(); draft.status=b.dataset.s; if(draft.status==='ok')draft.cause=null; renderForm(); });
+  const ca=document.getElementById('svCauses');
+  if(ca) ca.querySelectorAll('.p-cause').forEach(b=>b.onclick=()=>{ svSync(); draft.cause=(draft.cause===b.dataset.c?null:b.dataset.c); renderForm(); });
+  $('#svAddIn').onclick=()=>{ svSync(); draft.inputs.push({material:'',qty:'',unit:'条/分钟'}); renderForm();
+    const rows=document.querySelectorAll('#svInputs .mat'); if(rows.length) rows[rows.length-1].focus(); };
+  document.querySelectorAll('#svInputs .rm').forEach(b=>b.onclick=()=>{ svSync(); draft.inputs.splice(Number(b.dataset.rm),1); renderForm(); });
+  $('#svRate').oninput=()=>{ const v=$('#svRate').value; const unit=$('#svUnit').value;
+    $('#svConv').textContent=(!v||Number(v)<=0)?'':(unit==='秒/个'?'≈ '+(60/Number(v)).toFixed(1)+' 个/分钟':'≈ '+(60/Number(v)).toFixed(1)+' 秒/个'); };
+  $('#svUnit').onchange=()=>{ svSync(); renderForm(); };
+  $('#svSave').onclick=svSave;
 }
 
-function exportProbeCsv(){
-  pInit();
-  const L=pList();
-  const head=['产线ID','区域','产线名','主产物','摸底状态','面板产量','单位','折合UPM','卡点','备注','采集时间'];
-  const rows=L.map(l=>{
-    const e=state.probe[l.id]||{};
-    const r=Number(e.rate);
-    const upm = (!r||r<=0) ? '' : (e.unit==='spu' ? (60/r).toFixed(1) : r);
-    return [l.id,l.region,l.name||'',l.product||'',P_SMAP[e.s]||'未采',
-      (e.rate==null?'':e.rate), (e.unit==='spu'?'秒/个':'个/分钟'), upm,
-      P_CMAP[e.cause]||'', e.note||'', e.t||''];
-  });
-  const csv=[head,...rows].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
-  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='终末地摸底_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+function svSave(){
+  svSync();
+  if(!draft.region){ svToast('先点一下「在哪个区」'); return; }
+  if(!draft.product.trim()){ svToast('写一下这条线产什么'); return; }
+  const MP={ok:['运行','满效率'],slow:['运行','半效率'],down:['停机','不产'],power:['运行','不产']};
+  const m=MP[draft.status]||['运行','满效率'];
+  const payload={
+    region:draft.region,
+    name:draft.name.trim()||(draft.product.trim()+'-线'),
+    product:draft.product.trim(),
+    byproducts:(draft.byproducts||[]).filter(Boolean),
+    theoryVal:null, theoryUnit:'个/分钟',
+    actual:(draft.actual===''||draft.actual==null)?null:Number(draft.actual),
+    actualUnit:draft.actualUnit,
+    blueprint:draft.blueprint.trim(),
+    location:draft.location.trim(),
+    run:m[0], eff:m[1], loop:'需外补',
+    status:draft.status, cause:draft.cause||null,
+    inputs:(draft.inputs||[]).filter(x=>x.material&&String(x.material).trim())
+      .map(x=>({material:String(x.material).trim(),qty:(x.qty===''||x.qty==null)?0:Number(x.qty),unit:x.unit||'条/分钟'})),
+    power:(draft.power===''||draft.power==null)?null:Number(draft.power),
+    pumps:(draft.pumps===''||draft.pumps==null)?null:Number(draft.pumps),
+    inert:(draft.inert===''||draft.inert==null)?null:Number(draft.inert),
+    note:draft.note.trim(),
+    updated:new Date().toLocaleString('zh-CN',{hour12:false})
+  };
+
+  if(draft.editing&&draft.id){
+    const i=state.lines.findIndex(x=>x.id===draft.id);
+    if(i>=0) state.lines[i]=Object.assign(state.lines[i],payload);
+    lastRegion=draft.region;
+    rebuildBom(); saveState();
+    svOpen=false; draft=null; renderSurvey(); svToast('已保存修改');
+    return;
+  }
+
+  const line=Object.assign({id:svNextId(draft.region)},payload);
+  state.lines.push(line);
+  lastRegion=draft.region;
+  rebuildBom(); saveState();
+
+  draft=svBlank();
+  renderSurvey();
+  svToast('已记下第 '+state.lines.length+' 条');
+  const p=document.getElementById('svProd'); if(p) p.focus();
+  const card=document.querySelector('.sv-card');
+  if(card) card.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function applyProbeToLines(){
-  pInit();
-  const MAP={ok:['运行','满效率'],slow:['运行','半效率'],down:['停机','不产'],power:['运行','不产']};
-  let n=0;
-  Object.keys(state.probe).forEach(id=>{
-    const e=state.probe[id]; if(!e||!e.s) return;
-    const l=state.lines.find(x=>x.id===id); if(!l) return;
-    const m=MAP[e.s]||['运行','满效率'];
-    l.run=m[0]; l.eff=m[1];
-    const r=Number(e.rate);
-    if(r>0) l.actual = e.unit==='spu' ? Number((60/r).toFixed(2)) : r;
-    n++;
-  });
-  saveState(); refreshAll();
-  alert('已把 '+n+' 条产线的摸底结果写回台账：\n\n· 状态 → 运行/停机\n· 效率 → 满效率/半效率/不产\n· 实测产量 → 统一折算成「个/分钟」\n\n现在去看「总览」和「产线总览」就能看到新数据。');
+function svItemHtml(l){
+  const st=SST.filter(x=>x.k===l.status)[0];
+  const rate=(l.actual==null)?'产量未填':(l.actual+(l.actualUnit==='秒/个'?' 秒/个':' /分'));
+  const dots=[(l.actual!=null),!!(l.inputs&&l.inputs.length),!!l.blueprint]
+    .map(v=>v?'<b>●</b>':'○').join('');
+  return `<div class="sv-item">
+    <div style="flex:1;min-width:0">
+      <div class="sv-it">${esc(l.product||l.name)}${st?' <span style="font-size:12px">'+st.ic+'</span>':''}</div>
+      <div class="sv-is">${esc(l.name||'')}${l.name?' · ':''}${rate}${(l.inputs&&l.inputs.length)?' · 吃 '+l.inputs.length+' 种料':''}</div>
+    </div>
+    <div class="sv-dots" title="产量 / 原料 / 蓝图">${dots}</div>
+    <button class="sv-ed" data-ed="${esc(l.id)}">改</button>
+    <button class="sv-del" data-del="${esc(l.id)}">删</button>
+  </div>`;
 }
 
-$('#pJump').addEventListener('change',ev=>{
-  const r=ev.target.value; if(!r)return;
-  const L=pList(); const i=L.findIndex(l=>l.region===r);
-  if(i>=0){ pIdx=i; pShowReport=false; renderProbe(); pScroll(); }
-  ev.target.value='';
+function renderSurvey(){
+  renderForm();
+  const L=state.lines;
+  const host=$('#svList');
+  if(!L.length){
+    $('#svStat').innerHTML='';
+    host.innerHTML='<div class="sv-empty">还没有任何记录。<br>点上面「＋ 记一条产线」，走到哪记到哪。</div>';
+    return;
+  }
+  const noRate=L.filter(l=>l.actual==null).length;
+  const noIn=L.filter(l=>!(l.inputs&&l.inputs.length)).length;
+  $('#svStat').innerHTML='已记 <b>'+L.length+'</b> 条　·　缺产量 <b>'+noRate+'</b>　·　缺原料 <b>'+noIn+'</b>';
+
+  const by={};
+  L.forEach(l=>{ const r=l.region||'未分区'; (by[r]=by[r]||[]).push(l); });
+  const order=REGIONS.filter(r=>by[r]).concat(Object.keys(by).filter(r=>REGIONS.indexOf(r)<0));
+  host.innerHTML=order.map(r=>`
+    <div class="sv-grp">
+      <div class="sv-gh"><span class="dt" style="background:${rcOf(r)}"></span>${esc(r)}<em>${by[r].length} 条</em></div>
+      ${by[r].map(svItemHtml).join('')}
+    </div>`).join('')+`
+    <div class="hint" style="margin-top:14px">右下三个点 = <b>有产量 · 有原料 · 有蓝图码</b>。灰点就是还差这项，点「改」进去补。</div>`;
+
+  host.querySelectorAll('[data-ed]').forEach(b=>b.onclick=()=>{
+    const l=state.lines.filter(x=>x.id===b.dataset.ed)[0];
+    if(!l) return;
+    draft=svFromLine(l); svOpen=true; renderSurvey();
+    const card=document.querySelector('.sv-card');
+    if(card) card.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  host.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{
+    const l=state.lines.filter(x=>x.id===b.dataset.del)[0];
+    if(!l) return;
+    if(!confirm('删掉这条「'+(l.product||l.name)+'」？')) return;
+    state.lines=state.lines.filter(x=>x.id!==b.dataset.del);
+    rebuildBom(); saveState(); renderSurvey(); refreshAll();
+  });
+}
+
+$('#svNew').addEventListener('click',()=>{
+  draft=svBlank(); svOpen=true; renderSurvey();
+  const p=document.getElementById('svProd'); if(p) p.focus();
+  const card=document.querySelector('.sv-card');
+  if(card) card.scrollIntoView({behavior:'smooth',block:'start'});
 });
-$('#pReportBtn').addEventListener('click',()=>{
-  pShowReport=!pShowReport; renderProbe();
-  if(pShowReport) $('#pReport').scrollIntoView({behavior:'smooth',block:'start'});
-});
-$('#pCsvBtn').addEventListener('click',exportProbeCsv);
 
 function setEdit(on){
   editMode=on;
@@ -833,7 +985,7 @@ function setEdit(on){
   $('#btnEdit').textContent=on?'✅ 完成编辑':'✏️ 编辑模式';
   ['btnAddLine','btnAddLine2','btnAddBom','btnAddBn','btnReset'].forEach(id=>$('#'+id).classList.toggle('hidden',!on));
   document.querySelectorAll('.edcol').forEach(e=>e.classList.toggle('hidden',!on));
-  renderKpis();renderProbe();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi();
+  renderKpis();renderSurvey();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi();
 }
 $('#btnEdit').onclick=()=>setEdit(!editMode);
 $('#btnAddLine').onclick=addLine; $('#btnAddLine2').onclick=addLine;
@@ -871,7 +1023,7 @@ $('#fileInput').onchange=e=>{
 };
 
 function updateBanner(){ $('#obanner').classList.toggle('hidden',!hasOverride()); }
-function refreshAll(){ renderKpis();renderProbe();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi(); }
+function refreshAll(){ renderKpis();renderSurvey();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi(); }
 
 setEdit(false);
 updateBanner();
