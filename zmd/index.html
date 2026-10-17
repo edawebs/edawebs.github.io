@@ -28,6 +28,8 @@
   nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 18px}
   nav a{font-size:14px;color:var(--ink2);padding:7px 13px;border-radius:999px;white-space:nowrap;transition:.15s}
   nav a:hover{background:#eef0fb;color:var(--brand)}
+  nav a.hot{background:var(--brand);color:#fff;font-weight:700}
+  nav a.hot:hover{background:#5b4bcf;color:#fff}
   /* TOOLBAR */
   .toolbar{position:sticky;top:52px;z-index:49;background:#1f2533;color:#fff;
     display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:9px 18px;box-shadow:var(--shadow)}
@@ -97,6 +99,88 @@
   .bar .o{background:linear-gradient(90deg,#00b894,#26d3a8)}
   .bar .i{background:linear-gradient(90deg,#e17055,#ff9b7a)}
   .muted{color:#aab;font-size:12px}
+  /* ===== PROBE 摸底巡检 ===== */
+  .probe{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px}
+  .p-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .p-bar{flex:1;min-width:160px;height:12px;border-radius:999px;background:#eef0f6;overflow:hidden}
+  .p-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6C5CE7,#00b894);transition:.35s}
+  .p-num{font-size:14px;color:var(--ink2);white-space:nowrap}
+  .p-num b{font-size:20px;color:var(--ink);font-weight:800}
+  .p-jump{font-size:13px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit;color:var(--ink2)}
+  .p-card{border:2px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:.2s}
+  .p-card.done-ok{border-color:#b8f0dd}
+  .p-card.done-bad{border-color:#ffd0e2}
+  .p-head{display:flex;gap:12px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line);background:#fcfdff}
+  .p-stripe{width:7px;height:46px;border-radius:4px;flex:none}
+  .p-name{font-size:19px;font-weight:800;line-height:1.25}
+  .p-meta{font-size:12.5px;color:var(--ink2);margin-top:2px}
+  .p-idx{margin-left:auto;font-size:12px;color:var(--ink2);background:#eef0fb;padding:5px 11px;border-radius:999px;white-space:nowrap;font-weight:600}
+  .p-body{padding:17px}
+  .p-lbl{font-size:12.5px;font-weight:800;color:var(--ink2);letter-spacing:.4px;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+  .p-lbl .n{width:19px;height:19px;border-radius:50%;background:var(--brand);color:#fff;font-size:11px;
+    display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .p-states{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+  @media(min-width:660px){.p-states{grid-template-columns:repeat(4,1fr)}}
+  .p-st{border:2px solid var(--line);background:#fff;border-radius:14px;padding:13px 8px;cursor:pointer;
+    font-family:inherit;font-size:14px;font-weight:700;color:var(--ink);text-align:center;transition:.14s;line-height:1.3}
+  .p-st:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(31,37,51,.1)}
+  .p-st .ic{display:block;font-size:21px;margin-bottom:3px}
+  .p-st .ds{display:block;font-size:10.5px;font-weight:500;color:var(--ink2);margin-top:2px}
+  .p-st.on{transform:none}
+  .p-st.s-ok.on{border-color:#00b894;background:#e3fbf3;color:#06966f}
+  .p-st.s-slow.on{border-color:#e17055;background:#fff0e6;color:#d35400}
+  .p-st.s-down.on{border-color:#e84393;background:#fdeaf2;color:#c2185b}
+  .p-st.s-power.on{border-color:#0984e3;background:#eaf1ff;color:#2d6cdf}
+  .p-rate{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:15px}
+  .p-rate input{font-family:inherit;font-size:19px;font-weight:800;width:104px;padding:9px;text-align:center;
+    border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+  .p-rate input:focus{outline:none;border-color:var(--brand)}
+  .p-rate select{font-family:inherit;font-size:13.5px;padding:11px 9px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+  .p-rate .tip{font-size:12px;color:var(--ink2)}
+  .p-causes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  @media(min-width:660px){.p-causes{grid-template-columns:repeat(6,1fr)}}
+  .p-cause{font-family:inherit;font-size:13px;font-weight:600;padding:10px 6px;border-radius:11px;
+    border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink2);transition:.14s}
+  .p-cause:hover{border-color:var(--brand);color:var(--brand)}
+  .p-cause.on{background:#fff0e6;border-color:#e17055;color:#d35400}
+  .p-note{width:100%;font-family:inherit;font-size:14px;padding:11px 13px;border:2px solid var(--line);
+    border-radius:12px;background:#fff;color:var(--ink);margin-top:6px}
+  .p-note:focus{outline:none;border-color:var(--brand)}
+  .p-actions{display:flex;gap:9px;margin-top:18px;align-items:center;flex-wrap:wrap}
+  .p-nav{font-family:inherit;font-size:14px;font-weight:700;padding:12px 18px;border-radius:12px;
+    border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink2);transition:.14s}
+  .p-nav:hover{border-color:var(--brand);color:var(--brand)}
+  .p-nav.main{background:var(--brand);border-color:var(--brand);color:#fff;margin-left:auto}
+  .p-nav.main:hover{background:#5b4bcf}
+  .p-nav.ghost{color:var(--ink2)}
+  .p-nav:disabled{opacity:.4;cursor:not-allowed}
+  .p-skip{font-size:12px;color:var(--ink2);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:inherit}
+  .p-done{text-align:center;padding:34px 16px}
+  .p-done .big{font-size:44px}
+  .p-done h3{font-size:21px;font-weight:800;margin:8px 0 6px}
+  .p-done p{color:var(--ink2);font-size:14px}
+  /* 体检报告 */
+  .rep{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+  .rep .rc{background:#fff;border-radius:14px;padding:14px;box-shadow:var(--shadow);border-left:4px solid var(--brand)}
+  .rep .rc .v{font-size:26px;font-weight:800;line-height:1.1}
+  .rep .rc .k{font-size:12.5px;color:var(--ink2);margin-top:3px}
+  .rep .rc.g{border-color:#00b894}.rep .rc.o{border-color:#e17055}.rep .rc.r{border-color:#e84393}.rep .rc.b{border-color:#0984e3}
+  .todo{display:flex;flex-direction:column;gap:9px}
+  .todo .t{display:flex;gap:11px;align-items:flex-start;background:#fff;border-radius:12px;padding:12px 14px;
+    box-shadow:var(--shadow);border-left:4px solid #e17055}
+  .todo .t.r{border-color:#e84393}.todo .t.b{border-color:#0984e3}
+  .todo .t .nm{font-weight:700;font-size:14.5px}
+  .todo .t .why{font-size:12.5px;color:var(--ink2);margin-top:2px}
+  .todo .t .go{margin-left:auto;font-size:12px;padding:6px 10px;border-radius:9px;background:#eef0fb;
+    color:var(--brand);border:none;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap}
+  .seg{display:inline-flex;background:#eef0f6;border-radius:12px;padding:3px;gap:2px;margin-bottom:16px}
+  .seg button{font-family:inherit;font-size:13px;font-weight:700;padding:8px 16px;border-radius:9px;border:none;
+    background:none;cursor:pointer;color:var(--ink2);transition:.14s}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(31,37,51,.09)}
+  @media(max-width:520px){
+    .p-name{font-size:17px}.p-idx{font-size:11px;padding:4px 8px}
+    .p-body{padding:14px}.p-actions .p-nav{padding:11px 14px;font-size:13.5px}
+  }
   /* EDIT INPUTS */
   input.e,select.e{font-family:inherit;font-size:13px;padding:5px 7px;border:1px solid var(--line);
     border-radius:8px;background:#fff;color:var(--ink);width:100%;max-width:170px}
@@ -154,6 +238,7 @@
 </div></div>
 
 <nav><div class="wrap">
+  <a href="#probe" class="hot">🎯 摸底巡检</a>
   <a href="#overview">概览</a>
   <a href="#lines">产线总览</a>
   <a href="#bom">物料平衡</a>
@@ -176,6 +261,24 @@
 <div class="obanner hidden" id="obanner">⚠️ 你正在查看<b>浏览器里修改过的版本</b>（已自动保存在本机），公开站点 <a href="https://edawebs.github.io/zmd/" target="_blank" rel="noopener">edawebs.github.io/zmd/</a> 尚未同步。点「导出 data.js」可更新公开站点。</div>
 
 <div class="wrap">
+
+  <section id="probe">
+    <div class="sec-head"><h2>🎯 摸底巡检</h2><span class="tag">今天就用这个</span></div>
+    <p class="sec-sub">一次只看一条线，<b>点一下状态就记下来</b>，不用填 13 个格子。先扫一遍"在不在转"，异常的线才展开原因。26 条大约 10 分钟走完，采完自动出体检报告。</p>
+
+    <div class="probe">
+      <div class="p-top">
+        <div class="p-bar"><i id="pFill"></i></div>
+        <div class="p-num" id="pNum">已采 <b>0</b> / 0</div>
+        <select class="p-jump" id="pJump"></select>
+        <button class="p-nav ghost" id="pReportBtn" style="padding:8px 12px;font-size:12.5px">🩺 体检报告</button>
+        <button class="p-nav ghost" id="pCsvBtn" style="padding:8px 12px;font-size:12.5px">⬇️ 导出 CSV</button>
+      </div>
+      <div id="pHost"></div>
+    </div>
+
+    <div id="pReport"></div>
+  </section>
 
   <section id="overview">
     <div class="sec-head"><h2>📌 总览</h2><span class="tag">一眼看懂全局</span></div>
@@ -458,13 +561,279 @@ function delBom(i){ state.bomSummary.splice(i,1); saveState(); renderBom(); rend
 function addBn(){ state.bottlenecks.push({id:'ZMD-NEW',stage:'',cause:'',severity:'中',priority:'P1',fix:'',status:'待处理'}); saveState(); renderKanban(); renderKpis(); }
 function delBn(i){ state.bottlenecks.splice(i,1); saveState(); renderKanban(); renderKpis(); }
 
+/* ================= 摸底巡检 ================= */
+const PS=[
+  {k:'ok',   ic:'🟢', t:'正常满速',  d:'在转·不堆料'},
+  {k:'slow', ic:'🟡', t:'跑得慢',    d:'在转但没到理论'},
+  {k:'down', ic:'🔴', t:'停了/不产', d:'不出货或卡死'},
+  {k:'power',ic:'⚡', t:'只发电',    d:'全部转去发电'},
+];
+const PC=[
+  {k:'mat',t:'缺原料'},{k:'water',t:'水/泵不足'},{k:'power',t:'电力不足'},
+  {k:'store',t:'爆仓'},{k:'terrain',t:'地形布局'},{k:'other',t:'其他'},
+];
+const P_SMAP={ok:'正常满速',slow:'跑得慢',down:'停/不产',power:'只发电'};
+const P_CMAP={mat:'缺原料',water:'水/泵不足',power:'电力不足',store:'爆仓',terrain:'地形布局',other:'其他'};
+const P_ORDER=['枢纽区','谷底通道','武陵城','天王坪','原始研究院','高地','首墩','应龙关'];
+let pIdx=0, pShowReport=false;
+
+function pInit(){ if(!state.probe||typeof state.probe!=='object') state.probe={}; }
+function pList(){
+  return state.lines.slice().sort((a,b)=>{
+    const ia=P_ORDER.indexOf(a.region), ib=P_ORDER.indexOf(b.region);
+    const x=ia<0?99:ia, y=ib<0?99:ib;
+    if(x!==y) return x-y;
+    return String(a.id).localeCompare(String(b.id));
+  });
+}
+function rcOf(r){
+  try{ const m=state.regionColors||window.ZMD_DATA.regionColors||{}; return m[r]||'#6C5CE7'; }catch(e){ return '#6C5CE7'; }
+}
+function pRec(id,patch){
+  const cur=state.probe[id]||{s:null,rate:null,unit:'upm',cause:null,note:'',t:''};
+  state.probe[id]=Object.assign(cur,patch,{t:new Date().toLocaleString('zh-CN',{hour12:false})});
+  saveState();
+}
+function pConvTxt(e){
+  const r=Number(e.rate);
+  if(!r||r<=0) return '';
+  return e.unit==='spu' ? '≈ '+(60/r).toFixed(1)+' 个/分钟' : '≈ '+(60/r).toFixed(1)+' 秒/个';
+}
+function pScroll(){ const el=$('#pHost'); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
+function pJumpTo(id){
+  const i=pList().findIndex(l=>l.id===id);
+  if(i>=0){ pIdx=i; pShowReport=false; renderProbe(); pScroll(); }
+}
+function pGoNext(curId,skip){
+  const L=pList();
+  if(!skip && !(state.probe[curId]&&state.probe[curId].s)) pRec(curId,{s:'ok'});
+  const i=L.findIndex(x=>x.id===curId);
+  for(let k=1;k<=L.length;k++){
+    const j=(i+k)%L.length;
+    if(!(state.probe[L[j].id]&&state.probe[L[j].id].s)){ pIdx=j; break; }
+  }
+  renderProbe(); pScroll();
+}
+
+function renderProbe(){
+  pInit();
+  const L=pList();
+  if(!L.length){ $('#pHost').innerHTML='<div class="p-done"><div class="big">📭</div><h3>台账里还没有产线</h3></div>'; return; }
+  const total=L.length;
+  const done=L.filter(l=>state.probe[l.id]&&state.probe[l.id].s).length;
+  $('#pFill').style.width=(total?done/total*100:0).toFixed(1)+'%';
+  $('#pNum').innerHTML='已采 <b>'+done+'</b> / '+total;
+
+  const regions=[...new Set(L.map(l=>l.region))];
+  $('#pJump').innerHTML='<option value="">跳到区域…</option>'+regions.map(r=>'<option value="'+r+'">'+r+'</option>').join('');
+
+  if(pShowReport){ $('#pHost').style.display='none'; $('#pReport').classList.remove('hidden'); renderReport(); return; }
+  $('#pHost').style.display=''; $('#pReport').classList.add('hidden');
+
+  if(pIdx<0||pIdx>=total) pIdx=0;
+  const l=L[pIdx], e=state.probe[l.id]||{}, bad=!!e.s&&e.s!=='ok', rc=rcOf(l.region);
+
+  const tip = (done===total)
+    ? '<div style="background:#e3fbf3;border:1px solid #b8f0dd;border-radius:14px;padding:13px 16px;margin-bottom:14px;font-size:13.5px;color:#06966f;font-weight:700">🎉 '+total+' 条全部采完了！点右上角「🩺 体检报告」看整体结论，也可以用 ← 回看修正。</div>'
+    : '';
+
+  const card=`
+  <div class="p-card ${e.s?(bad?'done-bad':'done-ok'):''}">
+    <div class="p-head">
+      <div class="p-stripe" style="background:${rc}"></div>
+      <div style="min-width:0;flex:1">
+        <div class="p-name">${esc(l.name||l.id)}</div>
+        <div class="p-meta">${esc(l.region)}${l.location?' · '+esc(l.location):''} · 主产物 <b>${esc(l.product||'—')}</b>${e.t?' · 上次采集 '+esc(e.t):''}</div>
+      </div>
+      <div class="p-idx">${pIdx+1} / ${total}</div>
+    </div>
+    <div class="p-body">
+      <div class="p-lbl"><span class="n">1</span>这条线现在什么状态？</div>
+      <div class="p-states">
+        ${PS.map(s=>`<button class="p-st s-${s.k} ${e.s===s.k?'on':''}" data-s="${s.k}">
+          <span class="ic">${s.ic}</span>${s.t}<span class="ds">${s.d}</span></button>`).join('')}
+      </div>
+
+      <div class="p-rate">
+        <span class="p-lbl" style="margin:0"><span class="n">2</span>面板产量</span>
+        <input id="pRate" type="number" step="0.1" min="0" inputmode="decimal" placeholder="—" value="${e.rate==null?'':e.rate}">
+        <select id="pUnit">
+          <option value="upm"${e.unit!=='spu'?' selected':''}>个/分钟</option>
+          <option value="spu"${e.unit==='spu'?' selected':''}>秒/个</option>
+        </select>
+        <span class="tip" id="pConv">${pConvTxt(e)}</span>
+      </div>
+
+      ${bad?`<div style="margin-top:16px">
+        <div class="p-lbl"><span class="n">3</span>卡在哪一环？<span style="font-weight:500;color:#aab;font-size:11.5px">选一个最像的</span></div>
+        <div class="p-causes">${PC.map(c=>`<button class="p-cause ${e.cause===c.k?'on':''}" data-c="${c.k}">${c.t}</button>`).join('')}</div>
+      </div>`:''}
+
+      <div style="margin-top:16px">
+        <div class="p-lbl" style="margin-bottom:6px"><span class="n">${bad?'4':'3'}</span>一句话备注<span style="font-weight:500;color:#aab;font-size:11.5px">可选</span></div>
+        <input class="p-note" id="pNote" value="${esc(e.note||'')}" placeholder="例：末端堆满没人取 / 泵只开了半台 / 蓝图忘了存">
+      </div>
+
+      <div class="p-actions">
+        <button class="p-nav" id="pPrev" ${pIdx===0?'disabled':''}>← 上一条</button>
+        <button class="p-skip" id="pSkip">跳过这条</button>
+        <button class="p-nav main" id="pNext">${e.s?'✓ 已记录 · 下一条 →':'下一条 →'}</button>
+      </div>
+    </div>
+  </div>`;
+
+  $('#pHost').innerHTML=tip+card;
+
+  $('#pHost').querySelectorAll('.p-st').forEach(b=>b.addEventListener('click',()=>{
+    pRec(l.id,{s:b.dataset.s}); renderProbe();
+  }));
+  $('#pHost').querySelectorAll('.p-cause').forEach(b=>b.addEventListener('click',()=>{
+    const cur=state.probe[l.id]||{};
+    pRec(l.id,{cause:cur.cause===b.dataset.c?null:b.dataset.c}); renderProbe();
+  }));
+  $('#pRate').addEventListener('change',ev=>{
+    const v=ev.target.value.trim();
+    pRec(l.id,{rate:v===''?null:Number(v)}); renderProbe();
+  });
+  $('#pUnit').addEventListener('change',ev=>{ pRec(l.id,{unit:ev.target.value}); renderProbe(); });
+  $('#pNote').addEventListener('change',ev=>{ pRec(l.id,{note:ev.target.value}); });
+  $('#pPrev').addEventListener('click',()=>{ if(pIdx>0){pIdx--;renderProbe();pScroll();} });
+  $('#pSkip').addEventListener('click',()=>pGoNext(l.id,true));
+  $('#pNext').addEventListener('click',()=>pGoNext(l.id,false));
+}
+
+function renderReport(){
+  pInit();
+  const L=pList();
+  const got=L.filter(l=>state.probe[l.id]&&state.probe[l.id].s);
+  const cnt=k=>got.filter(l=>state.probe[l.id].s===k).length;
+  const un=L.length-got.length;
+
+  const regs=[...new Set(L.map(l=>l.region))];
+  const regRows=regs.map(r=>{
+    const ls=L.filter(l=>l.region===r);
+    const g=ls.filter(l=>state.probe[l.id]&&state.probe[l.id].s);
+    return {r:r, total:ls.length, done:g.length, bad:g.filter(l=>state.probe[l.id].s!=='ok').length};
+  });
+
+  const causeRows=PC.map(c=>({t:c.t,n:got.filter(l=>state.probe[l.id].cause===c.k).length})).filter(x=>x.n>0);
+  const w={down:0,power:1,slow:2};
+  const todo=got.filter(l=>state.probe[l.id].s!=='ok')
+    .sort((a,b)=>(w[state.probe[a.id].s]??9)-(w[state.probe[b.id].s]??9));
+
+  const kpiHtml=`
+    <div class="rep">
+      <div class="rc g"><div class="v">${cnt('ok')}</div><div class="k">🟢 正常满速</div></div>
+      <div class="rc o"><div class="v">${cnt('slow')}</div><div class="k">🟡 跑得慢</div></div>
+      <div class="rc r"><div class="v">${cnt('down')}</div><div class="k">🔴 停 / 不产</div></div>
+      <div class="rc b"><div class="v">${cnt('power')}</div><div class="k">⚡ 只发电</div></div>
+      <div class="rc"><div class="v">${un}</div><div class="k">⬜ 还没采</div></div>
+    </div>`;
+
+  const regTbl=`
+    <div class="tbl" style="margin-bottom:18px"><table>
+      <thead><tr><th>区域</th><th>产线数</th><th>已采</th><th>有问题</th><th>问题占比</th></tr></thead>
+      <tbody>${regRows.map(x=>{
+        const pct=x.done?Math.round(x.bad/x.done*100):0;
+        const cls=pct===0?'j-good':(pct>=50?'j-bad':'j-wait');
+        return `<tr><td><b>${esc(x.r)}</b></td><td>${x.total}</td><td>${x.done}</td><td>${x.bad}</td>
+          <td><span class="judge ${cls}">${x.done?pct+'%':'—'}</span></td></tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
+
+  const causeHtml = causeRows.length
+    ? `<div class="rep" style="margin-bottom:18px">${causeRows.map(c=>`<div class="rc o"><div class="v">${c.n}</div><div class="k">${esc(c.t)}</div></div>`).join('')}</div>`
+    : '<div class="hint">还没有标记卡点。选 🟡/🔴/⚡ 的线会展开「卡在哪一环」，选了才会统计到这里。</div>';
+
+  const todoHtml = todo.length
+    ? todo.map(l=>{
+        const e=state.probe[l.id];
+        return `<div class="t ${e.s==='down'?'r':(e.s==='power'?'b':'')}">
+          <div style="flex:1;min-width:0">
+            <div class="nm">${esc(l.name||l.id)} <span class="bd ${e.s==='down'?'noprod':(e.s==='power'?'limit':'half')}">${P_SMAP[e.s]||e.s}</span></div>
+            <div class="why">${esc(l.region)} · ${esc(l.product||'—')}${e.cause?' · 卡点：<b>'+P_CMAP[e.cause]+'</b>':''}${e.note?' · '+esc(e.note):''}</div>
+          </div>
+          <button class="go" data-goto="${l.id}">去改</button>
+        </div>`;
+      }).join('')
+    : '<div style="background:#e3fbf3;border-radius:14px;padding:18px;text-align:center;color:#06966f;font-weight:700">✅ 已采的产线全部正常，没有待办。</div>';
+
+  $('#pReport').innerHTML=`
+    <div class="sec-head" style="margin-top:26px"><h2>🩺 摸底体检报告</h2><span class="tag">已采 ${got.length} / ${L.length}</span>
+      <button class="p-nav ghost" id="pBack" style="padding:7px 12px;font-size:12.5px;margin-left:auto">← 回到巡检</button></div>
+    ${kpiHtml}
+    <div class="sec-head" style="margin-top:10px"><h2 style="font-size:16px">📍 按区域看问题</h2></div>
+    ${regTbl}
+    <div class="sec-head" style="margin-top:6px"><h2 style="font-size:16px">🧯 卡点分布</h2></div>
+    ${causeHtml}
+    <div class="sec-head" style="margin-top:22px"><h2 style="font-size:16px">🔧 待处理清单</h2><span class="tag">停机的排前面</span></div>
+    <div class="todo">${todoHtml}</div>
+    <div style="margin-top:22px;background:#f7f8fd;border-radius:14px;padding:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <button class="p-nav main" id="pApply" style="margin-left:0">⤵️ 写回台账</button>
+      <button class="p-nav" id="pCsv2">⬇️ 导出 CSV</button>
+      <span style="font-size:12.5px;color:var(--ink2);flex:1;min-width:200px">「写回台账」会把摸底的状态和产量填进产线台账，之后「总览」「产线总览」自动更新。</span>
+    </div>`;
+
+  $('#pBack').addEventListener('click',()=>{ pShowReport=false; renderProbe(); });
+  $('#pApply').addEventListener('click',applyProbeToLines);
+  $('#pCsv2').addEventListener('click',exportProbeCsv);
+  $('#pReport').querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>pJumpTo(b.dataset.goto)));
+}
+
+function exportProbeCsv(){
+  pInit();
+  const L=pList();
+  const head=['产线ID','区域','产线名','主产物','摸底状态','面板产量','单位','折合UPM','卡点','备注','采集时间'];
+  const rows=L.map(l=>{
+    const e=state.probe[l.id]||{};
+    const r=Number(e.rate);
+    const upm = (!r||r<=0) ? '' : (e.unit==='spu' ? (60/r).toFixed(1) : r);
+    return [l.id,l.region,l.name||'',l.product||'',P_SMAP[e.s]||'未采',
+      (e.rate==null?'':e.rate), (e.unit==='spu'?'秒/个':'个/分钟'), upm,
+      P_CMAP[e.cause]||'', e.note||'', e.t||''];
+  });
+  const csv=[head,...rows].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='终末地摸底_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+}
+
+function applyProbeToLines(){
+  pInit();
+  const MAP={ok:['运行','满效率'],slow:['运行','半效率'],down:['停机','不产'],power:['运行','不产']};
+  let n=0;
+  Object.keys(state.probe).forEach(id=>{
+    const e=state.probe[id]; if(!e||!e.s) return;
+    const l=state.lines.find(x=>x.id===id); if(!l) return;
+    const m=MAP[e.s]||['运行','满效率'];
+    l.run=m[0]; l.eff=m[1];
+    const r=Number(e.rate);
+    if(r>0) l.actual = e.unit==='spu' ? Number((60/r).toFixed(2)) : r;
+    n++;
+  });
+  saveState(); refreshAll();
+  alert('已把 '+n+' 条产线的摸底结果写回台账：\n\n· 状态 → 运行/停机\n· 效率 → 满效率/半效率/不产\n· 实测产量 → 统一折算成「个/分钟」\n\n现在去看「总览」和「产线总览」就能看到新数据。');
+}
+
+$('#pJump').addEventListener('change',ev=>{
+  const r=ev.target.value; if(!r)return;
+  const L=pList(); const i=L.findIndex(l=>l.region===r);
+  if(i>=0){ pIdx=i; pShowReport=false; renderProbe(); pScroll(); }
+  ev.target.value='';
+});
+$('#pReportBtn').addEventListener('click',()=>{
+  pShowReport=!pShowReport; renderProbe();
+  if(pShowReport) $('#pReport').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('#pCsvBtn').addEventListener('click',exportProbeCsv);
+
 function setEdit(on){
   editMode=on;
   $('#btnEdit').classList.toggle('on',on);
   $('#btnEdit').textContent=on?'✅ 完成编辑':'✏️ 编辑模式';
   ['btnAddLine','btnAddLine2','btnAddBom','btnAddBn','btnReset'].forEach(id=>$('#'+id).classList.toggle('hidden',!on));
   document.querySelectorAll('.edcol').forEach(e=>e.classList.toggle('hidden',!on));
-  renderKpis();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi();
+  renderKpis();renderProbe();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi();
 }
 $('#btnEdit').onclick=()=>setEdit(!editMode);
 $('#btnAddLine').onclick=addLine; $('#btnAddLine2').onclick=addLine;
@@ -502,7 +871,7 @@ $('#fileInput').onchange=e=>{
 };
 
 function updateBanner(){ $('#obanner').classList.toggle('hidden',!hasOverride()); }
-function refreshAll(){ renderKpis();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi(); }
+function refreshAll(){ renderKpis();renderProbe();renderFilters();renderLines();renderBom();renderUtil();renderKanban();renderKpi(); }
 
 setEdit(false);
 updateBanner();
